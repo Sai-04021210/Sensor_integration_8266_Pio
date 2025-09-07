@@ -1,0 +1,14 @@
+# ESP32 Configuration
+# Edit these values and update src/main.c
+
+# WiFi Settings
+WIFI_SSID=YOUR_WIFI_SSID
+WIFI_PASSWORD=YOUR_WIFI_PASSWORD
+
+# API Settings
+API_URL=https://your-api-endpoint.com/data
+
+# Example API URLs:
+# ThingSpeak: https://api.thingspeak.com/update
+# Firebase: https://your-project.firebaseio.com/data.json
+# Custom API: https://your-domain.com/api/sensor-data
