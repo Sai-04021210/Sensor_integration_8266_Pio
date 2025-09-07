@@ -1,0 +1,48 @@
+[
+    {
+        "id": "mobile-tab",
+        "type": "tab",
+        "label": "Mobile Interface",
+        "disabled": false,
+        "info": "Mobile-optimized interface for Node-RED client apps"
+    },
+    {
+        "id": "mobile-login",
+        "type": "http in",
+        "z": "mobile-tab",
+        "name": "Mobile Login",
+        "url": "/mobile/login",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 80,
+        "wires": [["mobile-login-form"]]
+    },
+    {
+        "id": "mobile-login-form",
+        "type": "template",
+        "z": "mobile-tab",
+        "name": "Mobile Login Form",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\\n<html>\\n<head>\\n    <title>Weather Station - Mobile</title>\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1, user-scalable=no\\\">\\n    <style>\\n        * { box-sizing: border-box; margin: 0; padding: 0; }\\n        body { \\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\\n            min-height: 100vh;\\n            padding: 20px;\\n        }\\n        .container {\\n            max-width: 400px;\\n            margin: 50px auto;\\n            background: white;\\n            border-radius: 20px;\\n            padding: 30px;\\n            box-shadow: 0 20px 40px rgba(0,0,0,0.1);\\n        }\\n        .logo {\\n            text-align: center;\\n            margin-bottom: 30px;\\n            font-size: 24px;\\n            color: #333;\\n            font-weight: bold;\\n        }\\n        .form-group {\\n            margin-bottom: 20px;\\n        }\\n        label {\\n            display: block;\\n            margin-bottom: 8px;\\n            color: #555;\\n            font-weight: 500;\\n        }\\n        input {\\n            width: 100%;\\n            padding: 15px;\\n            border: 2px solid #e1e5e9;\\n            border-radius: 10px;\\n            font-size: 16px;\\n            transition: border-color 0.3s;\\n        }\\n        input:focus {\\n            outline: none;\\n            border-color: #667eea;\\n        }\\n        .btn {\\n            width: 100%;\\n            padding: 15px;\\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\\n            color: white;\\n            border: none;\\n            border-radius: 10px;\\n            font-size: 16px;\\n            font-weight: 600;\\n            cursor: pointer;\\n            transition: transform 0.2s;\\n        }\\n        .btn:active {\\n            transform: scale(0.98);\\n        }\\n        .result {\\n            margin-top: 15px;\\n            padding: 12px;\\n            border-radius: 8px;\\n            text-align: center;\\n        }\\n        .success {\\n            background: #d4edda;\\n            color: #155724;\\n            border: 1px solid #c3e6cb;\\n        }\\n        .error {\\n            background: #f8d7da;\\n            color: #721c24;\\n            border: 1px solid #f5c6cb;\\n        }\\n        .demo-info {\\n            background: #e7f3ff;\\n            padding: 15px;\\n            border-radius: 8px;\\n            margin-bottom: 20px;\\n            font-size: 14px;\\n            color: #0c5460;\\n        }\\n    </style>\\n</head>\\n<body>\\n    <div class=\\\"container\\\">\\n        <div class=\\\"logo\\\">🌤️ Weather Station</div>\\n        \\n        <div class=\\\"demo-info\\\">\\n            <strong>Demo Credentials:</strong><br>\\n            Email: admin@weather.com<br>\\n            Password: admin123\\n        </div>\\n        \\n        <form id=\\\"loginForm\\\">\\n            <div class=\\\"form-group\\\">\\n                <label for=\\\"email\\\">Email or Username</label>\\n                <input type=\\\"text\\\" id=\\\"email\\\" placeholder=\\\"Enter your email\\\" required>\\n            </div>\\n            <div class=\\\"form-group\\\">\\n                <label for=\\\"password\\\">Password</label>\\n                <input type=\\\"password\\\" id=\\\"password\\\" placeholder=\\\"Enter your password\\\" required>\\n            </div>\\n            <button type=\\\"submit\\\" class=\\\"btn\\\">Login</button>\\n        </form>\\n        \\n        <div id=\\\"result\\\"></div>\\n    </div>\\n    \\n    <script>\\n        document.getElementById('loginForm').addEventListener('submit', async function(e) {\\n            e.preventDefault();\\n            \\n            const email = document.getElementById('email').value;\\n            const password = document.getElementById('password').value;\\n            const resultDiv = document.getElementById('result');\\n            \\n            try {\\n                const response = await fetch('/login', {\\n                    method: 'POST',\\n                    headers: { 'Content-Type': 'application/json' },\\n                    body: JSON.stringify({ email, password })\\n                });\\n                \\n                const result = await response.json();\\n                \\n                if (result.success) {\\n                    localStorage.setItem('weatherToken', result.token);\\n                    localStorage.setItem('weatherUser', JSON.stringify(result.user));\\n                    \\n                    resultDiv.innerHTML = '<div class=\\\"result success\\\">Login successful! Redirecting...</div>';\\n                    \\n                    setTimeout(() => {\\n                        window.location.href = '/mobile/scanner';\\n                    }, 1000);\\n                } else {\\n                    resultDiv.innerHTML = '<div class=\\\"result error\\\">' + result.message + '</div>';\\n                }\\n            } catch (error) {\\n                resultDiv.innerHTML = '<div class=\\\"result error\\\">Login failed: ' + error.message + '</div>';\\n            }\\n        });\\n    </script>\\n</body>\\n</html>",
+        "output": "str",
+        "x": 320,
+        "y": 80,
+        "wires": [["mobile-login-response"]]
+    },
+    {
+        "id": "mobile-login-response",
+        "type": "http response",
+        "z": "mobile-tab",
+        "name": "Mobile Login Response",
+        "statusCode": "",
+        "headers": {"Content-Type": "text/html"},
+        "x": 540,
+        "y": 80,
+        "wires": []
+    }
+]

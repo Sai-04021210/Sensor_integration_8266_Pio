@@ -1,0 +1,297 @@
+[
+    {
+        "id": "auth-tab",
+        "type": "tab",
+        "label": "Authentication & QR Scanner",
+        "disabled": false,
+        "info": "Weather Station Registration Platform with QR Code Scanning"
+    },
+    {
+        "id": "api-tab",
+        "type": "tab",
+        "label": "Weather Station APIs",
+        "disabled": false,
+        "info": "API endpoints for weather station management"
+    },
+    {
+        "id": "login-endpoint",
+        "type": "http in",
+        "z": "auth-tab",
+        "name": "Login Endpoint",
+        "url": "/login",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "validate-credentials"
+            ]
+        ]
+    },
+    {
+        "id": "validate-credentials",
+        "type": "function",
+        "z": "auth-tab",
+        "name": "Validate Credentials",
+        "func": "// Forward authentication to actual API with fallback\nconst { email, password } = msg.payload;\n\n// Store original request for fallback\nmsg.originalRequest = { email, password };\n\n// Prepare request to actual auth API\nmsg.url = 'http://172.20.10.10:5000/api/auth/login';\nmsg.method = 'POST';\nmsg.headers = {\n    'Content-Type': 'application/json'\n};\nmsg.payload = {\n    email: email,\n    password: password\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "auth-api-request"
+            ]
+        ]
+    },
+    {
+        "id": "login-response",
+        "type": "http response",
+        "z": "auth-tab",
+        "name": "Login Response",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 880,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "mobile-scanner-endpoint",
+        "type": "http in",
+        "z": "auth-tab",
+        "name": "Mobile Scanner",
+        "url": "/mobile",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "mobile-scanner-page"
+            ]
+        ]
+    },
+    {
+        "id": "mobile-scanner-page",
+        "type": "template",
+        "z": "auth-tab",
+        "name": "Mobile Scanner Page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html><html><head><title>Weather Station QR Scanner</title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>* { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; } .container { max-width: 600px; margin: 20px auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); } .logo { text-align: center; margin-bottom: 30px; font-size: 28px; color: #333; font-weight: bold; } .form-group { margin-bottom: 20px; } label { display: block; margin-bottom: 8px; color: #555; font-weight: 500; } input { width: 100%; padding: 15px; border: 2px solid #e1e5e9; border-radius: 10px; font-size: 16px; transition: border-color 0.3s; } input:focus { outline: none; border-color: #667eea; } .btn { padding: 15px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s; margin: 5px; } .btn:hover { transform: translateY(-2px); } .btn:active { transform: scale(0.98); } .btn.full-width { width: 100%; } .result { margin-top: 15px; padding: 15px; border-radius: 8px; } .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; } .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; } .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; } .scanner-section { margin-top: 30px; text-align: center; } #video { width: 100%; max-width: 500px; border: 3px solid #667eea; border-radius: 15px; margin: 20px 0; } .hidden { display: none; } #canvas { display: none; } .controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; } .qr-info { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #667eea; } .qr-data { font-family: monospace; background: #f1f3f4; padding: 10px; border-radius: 5px; word-break: break-all; margin: 10px 0; font-size: 14px; } .location-info { background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #ffeaa7; } .station-form { margin-top: 20px; } .station-form input { margin-bottom: 15px; }</style></head><body><div class=\"container\"><div class=\"logo\">🌤️ Weather Station Scanner</div><div id=\"loginForm\"><div class=\"form-group\"><label for=\"email\">Email</label><input type=\"email\" id=\"email\" placeholder=\"Enter your email\" required></div><div class=\"form-group\"><label for=\"password\">Password</label><input type=\"password\" id=\"password\" placeholder=\"Enter your password\" required></div><button class=\"btn full-width\" onclick=\"login()\">Login</button><div id=\"loginResult\"></div></div><div id=\"scannerSection\" class=\"hidden\"><h2 style=\"text-align: center; color: #333; margin-bottom: 20px;\">QR Code Scanner</h2><div class=\"scanner-section\"><video id=\"video\" autoplay playsinline></video><div class=\"controls\"><button class=\"btn\" id=\"startBtn\" onclick=\"startScanner()\">📷 Start Camera</button><button class=\"btn\" id=\"stopBtn\" onclick=\"stopScanner()\" style=\"display:none;\">⏹️ Stop Camera</button><button class=\"btn\" onclick=\"switchCamera()\">🔄 Switch Camera</button><button class=\"btn\" onclick=\"getLocation()\">📍 Get Location</button><button class=\"btn\" onclick=\"showManualInput()\">⌨️ Manual Input</button></div><div id=\"manualInput\" class=\"hidden\" style=\"margin: 20px 0; text-align: center;\"><input type=\"text\" id=\"manualQRData\" placeholder=\"Enter QR code data manually\" style=\"margin-bottom: 10px; width: 80%;\"><br><button class=\"btn\" onclick=\"processManualQR()\">✅ Process QR Data</button></div><div id=\"scanResult\"></div><div id=\"locationInfo\" class=\"location-info hidden\"><h4>📍 Current Location:</h4><div id=\"locationDisplay\"></div></div><div id=\"qrDetails\" class=\"qr-info hidden\"><h3>📋 Scanned QR Code Data:</h3><div id=\"qrDataDisplay\" class=\"qr-data\"></div><div class=\"station-form\"><input type=\"text\" id=\"stationName\" placeholder=\"Station Name (optional)\" /><button class=\"btn\" onclick=\"registerStation()\">✅ Register Weather Station</button><button class=\"btn\" onclick=\"clearScan()\">🔄 Scan Another</button></div></div></div><canvas id=\"canvas\"></canvas></div></div><script src=\"https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js\"></script><script>let video, canvas, context, scanning = false, currentStream = null; let facingMode = 'environment'; let sessionToken = null; let lastScannedData = null; let currentLocation = null; function showResult(message, type = 'info') { const resultDiv = document.getElementById('scanResult'); resultDiv.innerHTML = '<div class=\"result ' + type + '\">' + message + '</div>'; } function showQRData(qrData) { document.getElementById('qrDataDisplay').textContent = qrData; document.getElementById('qrDetails').classList.remove('hidden'); lastScannedData = qrData; } function clearScan() { document.getElementById('qrDetails').classList.add('hidden'); document.getElementById('startBtn').style.display = 'inline-block'; showResult('Ready to scan next QR code', 'info'); } async function getLocation() { if (!navigator.geolocation) { showResult('❌ Geolocation not supported by this browser', 'error'); return; } showResult('📍 Getting your location...', 'info'); navigator.geolocation.getCurrentPosition( function(position) { currentLocation = { type: \"Point\", coordinates: [position.coords.longitude, position.coords.latitude], elevation: position.coords.altitude || 0 }; document.getElementById('locationDisplay').innerHTML = `<strong>Latitude:</strong> ${position.coords.latitude.toFixed(6)}<br><strong>Longitude:</strong> ${position.coords.longitude.toFixed(6)}<br><strong>Elevation:</strong> ${position.coords.altitude || 0}m`; document.getElementById('locationInfo').classList.remove('hidden'); showResult('✅ Location obtained successfully!', 'success'); }, function(error) { let errorMsg = '❌ Location error: '; switch(error.code) { case error.PERMISSION_DENIED: errorMsg += 'Permission denied. Please allow location access.'; break; case error.POSITION_UNAVAILABLE: errorMsg += 'Location information unavailable.'; break; case error.TIMEOUT: errorMsg += 'Location request timed out.'; break; default: errorMsg += 'Unknown error occurred.'; } showResult(errorMsg, 'error'); }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 } ); } async function login() { const email = document.getElementById('email').value; const password = document.getElementById('password').value; const resultDiv = document.getElementById('loginResult'); if (!email || !password) { resultDiv.innerHTML = '<div class=\"result error\">❌ Please enter both email and password</div>'; return; } try { const response = await fetch('http://172.20.10.10:5000/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) }); const result = await response.json(); if (response.ok && result.token) { sessionToken = result.token; resultDiv.innerHTML = '<div class=\"result success\">✅ Login successful! Welcome!</div>'; document.getElementById('loginForm').classList.add('hidden'); document.getElementById('scannerSection').classList.remove('hidden'); getLocation(); } else { resultDiv.innerHTML = '<div class=\"result error\">❌ ' + (result.message || result.error || 'Login failed') + '</div>'; } } catch (error) { resultDiv.innerHTML = '<div class=\"result error\">❌ Login failed: ' + error.message + '</div>'; } } async function startScanner() { video = document.getElementById('video'); canvas = document.getElementById('canvas'); context = canvas.getContext('2d'); try { if (currentStream) { currentStream.getTracks().forEach(track => track.stop()); } const constraints = { video: { facingMode: facingMode, width: { ideal: 1280 }, height: { ideal: 720 } } }; const stream = await navigator.mediaDevices.getUserMedia(constraints); currentStream = stream; video.srcObject = stream; scanning = true; document.getElementById('startBtn').style.display = 'none'; document.getElementById('stopBtn').style.display = 'inline-block'; showResult('📷 Scanner active - Point camera at QR code', 'success'); video.addEventListener('loadedmetadata', () => { scanQRCode(); }); } catch (error) { console.error('Camera error:', error); let errorMsg = '❌ Camera access failed: '; if (error.name === 'NotAllowedError') { errorMsg += 'Permission denied. Please allow camera access in your browser settings.'; } else if (error.name === 'NotFoundError') { errorMsg += 'No camera found on this device.'; } else { errorMsg += error.message; } showResult(errorMsg, 'error'); } } function stopScanner() { scanning = false; if (currentStream) { currentStream.getTracks().forEach(track => track.stop()); currentStream = null; } document.getElementById('startBtn').style.display = 'inline-block'; document.getElementById('stopBtn').style.display = 'none'; showResult('⏹️ Scanner stopped', 'info'); } function switchCamera() { facingMode = facingMode === 'environment' ? 'user' : 'environment'; if (scanning) { startScanner(); } } function scanQRCode() { if (!scanning || !video.videoWidth) { if (scanning) requestAnimationFrame(scanQRCode); return; } canvas.height = video.videoHeight; canvas.width = video.videoWidth; context.drawImage(video, 0, 0, canvas.width, canvas.height); const imageData = context.getImageData(0, 0, canvas.width, canvas.height); const code = jsQR(imageData.data, imageData.width, imageData.height); if (code) { stopScanner(); showResult('✅ QR Code detected successfully!', 'success'); showQRData(code.data); return; } requestAnimationFrame(scanQRCode); } async function registerStation() { if (!lastScannedData || !sessionToken) { showResult('❌ Missing scan data or session token', 'error'); return; } if (!currentLocation) { showResult('❌ Location not available. Please click \"Get Location\" first.', 'error'); return; } const stationName = document.getElementById('stationName').value || `Weather Station ${lastScannedData}`; const requestBody = { stationId: lastScannedData, stationName: stationName, location: currentLocation }; console.log('Registering station with data:', requestBody); try { const response = await fetch('http://172.20.10.10:5000/api/station', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + sessionToken }, body: JSON.stringify(requestBody) }); console.log('Registration response status:', response.status); const result = await response.json(); console.log('Registration response data:', result); if (response.ok) { showResult('🎉 Weather station registered successfully!<br><strong>Station ID:</strong> ' + lastScannedData, 'success'); setTimeout(() => { clearScan(); }, 3000); } else { showResult('❌ Registration failed: ' + (result.message || result.error || 'Unknown error'), 'error'); } } catch (error) { console.error('Registration error:', error); showResult('❌ Network error: ' + error.message, 'error'); } }</script></body></html>",
+        "output": "str",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "mobile-scanner-response"
+            ]
+        ]
+    },
+    {
+        "id": "mobile-scanner-response",
+        "type": "http response",
+        "z": "auth-tab",
+        "name": "Mobile Scanner Response",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "text/html"
+        },
+        "x": 680,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "auth-api-request",
+        "type": "http request",
+        "z": "auth-tab",
+        "name": "Call Auth API",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "process-auth-response"
+            ]
+        ]
+    },
+    {
+        "id": "process-auth-response",
+        "type": "function",
+        "z": "auth-tab",
+        "name": "Process Auth Response",
+        "func": "// Process the response from the actual auth API with fallback\nif (msg.statusCode === 200 && msg.payload) {\n    // Successful authentication from external API\n    msg.payload = {\n        success: true,\n        message: \"Login successful\",\n        token: msg.payload.token || msg.payload.accessToken || 'auth-success',\n        user: msg.payload.user || { email: msg.payload.email }\n    };\n    msg.statusCode = 200;\n} else if (msg.payload && msg.payload.code === 'ECONNREFUSED') {\n    // External API not reachable, use fallback authentication\n    const { email, password } = msg.originalRequest;\n    \n    // Demo users for fallback\n    const validUsers = [\n        { email: \"admin@weather.com\", username: \"admin\", password: \"admin123\" },\n        { email: \"user@weather.com\", username: \"user\", password: \"user123\" }\n    ];\n    \n    const user = validUsers.find(u => \n        (u.email === email || u.username === email) && u.password === password\n    );\n    \n    if (user) {\n        // Generate session token\n        const sessionToken = Buffer.from(`${user.username}:${Date.now()}`).toString('base64');\n        \n        msg.payload = {\n            success: true,\n            message: \"Login successful (fallback mode)\",\n            token: sessionToken,\n            user: { email: user.email, username: user.username }\n        };\n        msg.statusCode = 200;\n    } else {\n        msg.payload = {\n            success: false,\n            message: \"Invalid credentials\"\n        };\n        msg.statusCode = 401;\n    }\n} else {\n    // Authentication failed\n    msg.payload = {\n        success: false,\n        message: msg.payload.message || \"Authentication failed\"\n    };\n    msg.statusCode = 401;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "login-response"
+            ]
+        ]
+    },
+    {
+        "id": "register-station-endpoint",
+        "type": "http in",
+        "z": "api-tab",
+        "name": "Register Station API",
+        "url": "/api/register-station",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "validate-token"
+            ]
+        ]
+    },
+    {
+        "id": "validate-token",
+        "type": "function",
+        "z": "api-tab",
+        "name": "Validate Token",
+        "func": "// Simple token validation\nconst authHeader = msg.req.headers.authorization;\n\nif (!authHeader || !authHeader.startsWith('Bearer ')) {\n    msg.payload = { success: false, message: \"Missing or invalid authorization header\" };\n    msg.statusCode = 401;\n    return msg;\n}\n\nconst token = authHeader.substring(7);\ntry {\n    // Decode the simple token (in production, use proper JWT validation)\n    const decoded = Buffer.from(token, 'base64').toString('utf8');\n    const [username, timestamp] = decoded.split(':');\n    \n    // Check if token is not too old (1 hour)\n    const tokenAge = Date.now() - parseInt(timestamp);\n    if (tokenAge > 3600000) {\n        msg.payload = { success: false, message: \"Token expired\" };\n        msg.statusCode = 401;\n        return msg;\n    }\n    \n    // Add user info to message\n    msg.user = { username };\n    return msg;\n} catch (error) {\n    msg.payload = { success: false, message: \"Invalid token\" };\n    msg.statusCode = 401;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "process-registration"
+            ]
+        ]
+    },
+    {
+        "id": "process-registration",
+        "type": "function",
+        "z": "api-tab",
+        "name": "Process Registration",
+        "func": "// Prepare request to actual station registration API with fallback\nconst { qrData, location, stationName } = msg.payload;\n\n// Extract stationId from QR code\nlet stationId;\ntry {\n    const parsed = JSON.parse(qrData);\n    stationId = parsed.stationId || parsed.id || qrData;\n} catch (error) {\n    stationId = qrData.trim();\n}\n\n// Store data for fallback\nmsg.stationData = {\n    stationId: stationId,\n    stationName: stationName || `Weather Station ${stationId}`,\n    location: location || {\n        type: \"Point\",\n        coordinates: [0, 0],\n        elevation: 0\n    },\n    qrData: qrData\n};\n\n// Prepare the API request\nmsg.url = 'http://172.20.10.10:5000/api/station';\nmsg.method = 'POST';\nmsg.headers = {\n    'Content-Type': 'application/json',\n    'Authorization': msg.req.headers.authorization\n};\n\nmsg.payload = msg.stationData;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "station-api-request"
+            ]
+        ]
+    },
+    {
+        "id": "registration-response",
+        "type": "http response",
+        "z": "api-tab",
+        "name": "Registration Response",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1180,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "list-stations-endpoint",
+        "type": "http in",
+        "z": "api-tab",
+        "name": "List Stations API",
+        "url": "/api/stations",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "get-stations"
+            ]
+        ]
+    },
+    {
+        "id": "get-stations",
+        "type": "function",
+        "z": "api-tab",
+        "name": "Get Stations",
+        "func": "// Get all registered stations\nconst stations = context.get('registeredStations') || [];\n\nmsg.payload = {\n    success: true,\n    count: stations.length,\n    stations: stations\n};\nmsg.statusCode = 200;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "stations-response"
+            ]
+        ]
+    },
+    {
+        "id": "stations-response",
+        "type": "http response",
+        "z": "api-tab",
+        "name": "Stations Response",
+        "statusCode": "",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 520,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "station-api-request",
+        "type": "http request",
+        "z": "api-tab",
+        "name": "Call Station API",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 740,
+        "y": 80,
+        "wires": [
+            [
+                "process-station-response"
+            ]
+        ]
+    },
+    {
+        "id": "process-station-response",
+        "type": "function",
+        "z": "api-tab",
+        "name": "Process Station Response",
+        "func": "// Process the response from the actual station API with fallback\nif (msg.statusCode === 200 || msg.statusCode === 201) {\n    // Successful registration from external API\n    msg.payload = {\n        success: true,\n        message: `Weather station registered successfully!`,\n        stationId: msg.stationData.stationId,\n        response: msg.payload\n    };\n    msg.statusCode = 200;\n} else if (msg.payload && msg.payload.code === 'ECONNREFUSED') {\n    // External API not reachable, use fallback registration\n    const stationData = msg.stationData;\n    \n    // Generate unique station ID for fallback\n    const fallbackId = `WS_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;\n    \n    // Store in context (local storage)\n    let stations = context.get('registeredStations') || [];\n    const registration = {\n        stationId: stationData.stationId,\n        fallbackId: fallbackId,\n        stationName: stationData.stationName,\n        location: stationData.location,\n        qrData: stationData.qrData,\n        registeredAt: new Date().toISOString(),\n        mode: 'fallback'\n    };\n    \n    stations.push(registration);\n    context.set('registeredStations', stations);\n    \n    msg.payload = {\n        success: true,\n        message: `Weather station registered successfully (fallback mode)!`,\n        stationId: stationData.stationId,\n        fallbackId: fallbackId,\n        registration: registration\n    };\n    msg.statusCode = 200;\n} else {\n    // Registration failed\n    msg.payload = {\n        success: false,\n        message: msg.payload.message || \"Station registration failed\",\n        error: msg.payload\n    };\n    msg.statusCode = msg.statusCode || 500;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 960,
+        "y": 80,
+        "wires": [
+            [
+                "registration-response"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,17 @@
+{
+  "files.exclude": {
+    "workspace/.config.*": true,
+    "workspace/lib": true,
+    "workspace/node_modules": true,
+    "workspace/.npm": true,
+    "**/.config.runtime.json*": true,
+    "**/.sessions.json": true,
+    "**/.config.json": true,
+    "**/.config.nodes.json": true,
+    "**/.config.users.json": true,
+    "**/.npm": true,
+    "**/node_modules": true,
+    "**/*.backup": true,
+    "**/*.log": true
+  }
+}

@@ -1,0 +1,84 @@
+[
+    {
+        "id": "flow-tab",
+        "type": "tab",
+        "label": "Timestamp Logger",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "inject-timestamp",
+        "type": "inject",
+        "z": "flow-tab",
+        "name": "Inject Timestamp",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "format-function"
+            ]
+        ]
+    },
+    {
+        "id": "format-function",
+        "type": "function",
+        "z": "flow-tab",
+        "name": "Format Timestamp",
+        "func": "const date = new Date(msg.payload);\nmsg.payload = date.toISOString() + \"\\n\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "file-writer"
+            ]
+        ]
+    },
+    {
+        "id": "file-writer",
+        "type": "file",
+        "z": "flow-tab",
+        "name": "Write to Log File",
+        "filename": "/data/timestamps.log",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 640,
+        "y": 240,
+        "wires": [
+            [
+                "164a235e6da4df22"
+            ]
+        ]
+    },
+    {
+        "id": "164a235e6da4df22",
+        "type": "debug",
+        "z": "flow-tab",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 180,
+        "wires": []
+    }
+]

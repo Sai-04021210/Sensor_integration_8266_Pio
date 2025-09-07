@@ -1,0 +1,996 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.19.4
+2 info using node@v16.20.2
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 1ms
+10 timing config:load:file:/usr/src/node-red/.npmrc Completed in 1ms
+11 timing config:load:user Completed in 1ms
+12 timing config:load:file:/usr/local/etc/npmrc Completed in 3ms
+13 timing config:load:global Completed in 3ms
+14 timing config:load:validate Completed in 0ms
+15 timing config:load:credentials Completed in 1ms
+16 timing config:load:setEnvs Completed in 0ms
+17 timing config:load Completed in 9ms
+18 timing npm:load:configload Completed in 9ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install node-red-dashboard node-red-node-base64
+22 verbose argv "install" "node-red-dashboard" "node-red-node-base64"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing config:load:flatten Completed in 1ms
+25 timing npm:load:display Completed in 1ms
+26 verbose logfile logs-max:10 dir:/data/.npm/_logs
+27 verbose logfile /data/.npm/_logs/2025-09-04T01_37_05_958Z-debug-0.log
+28 timing npm:load:logFile Completed in 4ms
+29 timing npm:load:timers Completed in 0ms
+30 timing npm:load:configScope Completed in 0ms
+31 timing npm:load Completed in 17ms
+32 timing arborist:ctor Completed in 0ms
+33 silly logfile start cleaning logs, removing 1 files
+34 silly logfile done cleaning log files
+35 timing arborist:ctor Completed in 0ms
+36 timing arborist:ctor Completed in 0ms
+37 timing arborist:ctor Completed in 0ms
+38 timing idealTree:init Completed in 183ms
+39 timing idealTree:userRequests Completed in 0ms
+40 silly idealTree buildDeps
+41 silly fetch manifest node-red-dashboard@*
+42 http fetch GET 200 https://registry.npmjs.org/node-red-dashboard 31ms (cache hit)
+43 silly fetch manifest node-red-node-base64@*
+44 http fetch GET 200 https://registry.npmjs.org/node-red-node-base64 3ms (cache hit)
+45 silly placeDep ROOT node-red-dashboard@3.6.6 OK for: node-red-docker@3.1.9 want: *
+46 silly placeDep ROOT node-red-node-base64@1.0.0 OK for: node-red-docker@3.1.9 want: *
+47 silly fetch manifest gridstack@^0.6.4
+48 silly fetch manifest socket.io@^4.8.1
+49 silly fetch manifest compression@^1.8.1
+50 silly fetch manifest serve-static@^1.16.2
+51 http fetch GET 200 https://registry.npmjs.org/compression 8ms (cache hit)
+52 http fetch GET 200 https://registry.npmjs.org/serve-static 8ms (cache hit)
+53 http fetch GET 200 https://registry.npmjs.org/socket.io 10ms (cache hit)
+54 http fetch GET 200 https://registry.npmjs.org/gridstack 12ms (cache hit)
+55 timing idealTree:#root Completed in 54ms
+56 silly placeDep ROOT compression@1.8.1 OK for: node-red-dashboard@3.6.6 want: ^1.8.1
+57 silly placeDep ROOT gridstack@0.6.4 OK for: node-red-dashboard@3.6.6 want: ^0.6.4
+58 silly placeDep node_modules/node-red-dashboard serve-static@1.16.2 OK for: node-red-dashboard@3.6.6 want: ^1.16.2
+59 silly placeDep ROOT socket.io@4.8.1 OK for: node-red-dashboard@3.6.6 want: ^4.8.1
+60 silly fetch manifest compressible@~2.0.18
+61 silly fetch manifest negotiator@~0.6.4
+62 silly fetch manifest on-headers@~1.1.0
+63 silly fetch manifest safe-buffer@5.2.1
+64 silly fetch manifest jquery@^1.8 || 2 || 3
+65 silly fetch manifest send@0.19.0
+66 silly fetch manifest encodeurl@~2.0.0
+67 silly fetch manifest debug@~4.3.2
+68 silly fetch manifest base64id@~2.0.0
+69 silly fetch manifest engine.io@~6.6.0
+70 silly fetch manifest socket.io-parser@~4.2.4
+71 silly fetch manifest socket.io-adapter@~2.5.2
+72 http fetch GET 200 https://registry.npmjs.org/on-headers 15ms (cache hit)
+73 http fetch GET 200 https://registry.npmjs.org/send 16ms (cache hit)
+74 http fetch GET 200 https://registry.npmjs.org/safe-buffer 19ms (cache hit)
+75 http fetch GET 200 https://registry.npmjs.org/jquery 20ms (cache hit)
+76 http fetch GET 200 https://registry.npmjs.org/base64id 20ms (cache hit)
+77 http fetch GET 200 https://registry.npmjs.org/debug 21ms (cache hit)
+78 http fetch GET 200 https://registry.npmjs.org/compressible 25ms (cache hit)
+79 http fetch GET 200 https://registry.npmjs.org/encodeurl 24ms (cache hit)
+80 http fetch GET 200 https://registry.npmjs.org/negotiator 25ms (cache hit)
+81 http fetch GET 200 https://registry.npmjs.org/socket.io-parser 23ms (cache hit)
+82 http fetch GET 200 https://registry.npmjs.org/socket.io-adapter 24ms (cache hit)
+83 http fetch GET 200 https://registry.npmjs.org/engine.io 26ms (cache hit)
+84 timing idealTree:node_modules/node-red-dashboard Completed in 32ms
+85 silly placeDep ROOT compressible@2.0.18 OK for: compression@1.8.1 want: ~2.0.18
+86 silly placeDep node_modules/compression negotiator@0.6.4 OK for: compression@1.8.1 want: ~0.6.4
+87 silly placeDep node_modules/compression on-headers@1.1.0 OK for: compression@1.8.1 want: ~1.1.0
+88 silly placeDep node_modules/compression safe-buffer@5.2.1 OK for: compression@1.8.1 want: 5.2.1
+89 timing idealTree:node_modules/compression Completed in 4ms
+90 timing idealTree:node_modules/compressible Completed in 0ms
+91 silly placeDep ROOT jquery@3.7.1 OK for: gridstack@0.6.4 want: ^1.8 || 2 || 3
+92 timing idealTree:node_modules/gridstack Completed in 1ms
+93 timing idealTree:node_modules/jquery Completed in 0ms
+94 timing idealTree:node_modules/node-red-node-base64 Completed in 0ms
+95 silly placeDep ROOT base64id@2.0.0 OK for: socket.io@4.8.1 want: ~2.0.0
+96 silly placeDep node_modules/socket.io debug@4.3.7 OK for: socket.io@4.8.1 want: ~4.3.2
+97 silly placeDep ROOT engine.io@6.6.4 OK for: socket.io@4.8.1 want: ~6.6.0
+98 silly placeDep ROOT socket.io-adapter@2.5.5 OK for: socket.io@4.8.1 want: ~2.5.2
+99 silly placeDep ROOT socket.io-parser@4.2.4 OK for: socket.io@4.8.1 want: ~4.2.4
+100 silly fetch manifest ms@^2.1.3
+101 silly fetch manifest @types/cors@^2.8.12
+102 silly fetch manifest @types/node@>=10.0.0
+103 silly fetch manifest cookie@~0.7.2
+104 silly fetch manifest debug@~4.3.1
+105 silly fetch manifest engine.io-parser@~5.2.1
+106 silly fetch manifest ws@~8.17.1
+107 silly fetch manifest debug@~4.3.4
+108 silly fetch manifest @socket.io/component-emitter@~3.1.0
+109 http fetch GET 200 https://registry.npmjs.org/ms 11ms (cache hit)
+110 http fetch GET 200 https://registry.npmjs.org/@types%2fcors 12ms (cache hit)
+111 http fetch GET 200 https://registry.npmjs.org/ws 12ms (cache hit)
+112 http fetch GET 200 https://registry.npmjs.org/engine.io-parser 13ms (cache hit)
+113 http fetch GET 200 https://registry.npmjs.org/@socket.io%2fcomponent-emitter 14ms (cache hit)
+114 http fetch GET 200 https://registry.npmjs.org/cookie 18ms (cache hit)
+115 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 21ms (cache hit)
+116 timing idealTree:node_modules/socket.io Completed in 33ms
+117 timing idealTree:node_modules/base64id Completed in 0ms
+118 silly fetch manifest bufferutil@^4.0.1
+119 http fetch GET 200 https://registry.npmjs.org/bufferutil 3ms (cache hit)
+120 silly fetch manifest utf-8-validate@>=5.0.2
+121 http fetch GET 200 https://registry.npmjs.org/utf-8-validate 4ms (cache hit)
+122 silly placeDep ROOT @types/cors@2.8.19 OK for: engine.io@6.6.4 want: ^2.8.12
+123 silly placeDep ROOT @types/node@24.3.0 OK for: engine.io@6.6.4 want: >=10.0.0
+124 silly placeDep node_modules/engine.io cookie@0.7.2 OK for: engine.io@6.6.4 want: ~0.7.2
+125 silly placeDep node_modules/engine.io debug@4.3.7 OK for: engine.io@6.6.4 want: ~4.3.1
+126 silly placeDep ROOT engine.io-parser@5.2.3 OK for: engine.io@6.6.4 want: ~5.2.1
+127 silly placeDep node_modules/engine.io ws@8.17.1 OK for: engine.io@6.6.4 want: ~8.17.1
+128 silly fetch manifest undici-types@~7.10.0
+129 http fetch GET 200 https://registry.npmjs.org/undici-types 5ms (cache hit)
+130 timing idealTree:node_modules/engine.io Completed in 18ms
+131 timing idealTree:node_modules/@types/cors Completed in 0ms
+132 silly placeDep ROOT undici-types@7.10.0 OK for: @types/node@24.3.0 want: ~7.10.0
+133 timing idealTree:node_modules/@types/node Completed in 1ms
+134 timing idealTree:node_modules/engine.io-parser Completed in 0ms
+135 silly placeDep node_modules/socket.io-adapter debug@4.3.7 OK for: socket.io-adapter@2.5.5 want: ~4.3.4
+136 silly placeDep node_modules/socket.io-adapter ws@8.17.1 OK for: socket.io-adapter@2.5.5 want: ~8.17.1
+137 timing idealTree:node_modules/socket.io-adapter Completed in 1ms
+138 silly placeDep ROOT @socket.io/component-emitter@3.1.2 OK for: socket.io-parser@4.2.4 want: ~3.1.0
+139 silly placeDep node_modules/socket.io-parser debug@4.3.7 OK for: socket.io-parser@4.2.4 want: ~4.3.1
+140 timing idealTree:node_modules/socket.io-parser Completed in 1ms
+141 timing idealTree:node_modules/@socket.io/component-emitter Completed in 0ms
+142 timing idealTree:node_modules/undici-types Completed in 0ms
+143 timing idealTree:node_modules/compression/node_modules/negotiator Completed in 0ms
+144 timing idealTree:node_modules/compression/node_modules/on-headers Completed in 0ms
+145 timing idealTree:node_modules/compression/node_modules/safe-buffer Completed in 0ms
+146 timing idealTree:node_modules/engine.io/node_modules/cookie Completed in 0ms
+147 silly placeDep node_modules/engine.io ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+148 timing idealTree:node_modules/engine.io/node_modules/debug Completed in 0ms
+149 timing idealTree:node_modules/engine.io/node_modules/ms Completed in 0ms
+150 timing idealTree:node_modules/engine.io/node_modules/ws Completed in 0ms
+151 silly placeDep node_modules/node-red-dashboard encodeurl@2.0.0 OK for: serve-static@1.16.2 want: ~2.0.0
+152 silly placeDep node_modules/node-red-dashboard send@0.19.0 OK for: serve-static@1.16.2 want: 0.19.0
+153 silly fetch manifest ms@2.1.3
+154 silly fetch manifest mime@1.6.0
+155 silly fetch manifest encodeurl@~1.0.2
+156 http fetch GET 200 https://registry.npmjs.org/mime 2ms (cache hit)
+157 timing idealTree:node_modules/node-red-dashboard/node_modules/serve-static Completed in 4ms
+158 timing idealTree:node_modules/node-red-dashboard/node_modules/encodeurl Completed in 0ms
+159 silly placeDep node_modules/node-red-dashboard/node_modules/send encodeurl@1.0.2 OK for: send@0.19.0 want: ~1.0.2
+160 silly placeDep node_modules/node-red-dashboard mime@1.6.0 OK for: send@0.19.0 want: 1.6.0
+161 silly placeDep node_modules/node-red-dashboard ms@2.1.3 OK for: send@0.19.0 want: 2.1.3
+162 timing idealTree:node_modules/node-red-dashboard/node_modules/send Completed in 1ms
+163 timing idealTree:node_modules/node-red-dashboard/node_modules/mime Completed in 0ms
+164 timing idealTree:node_modules/node-red-dashboard/node_modules/ms Completed in 0ms
+165 silly placeDep node_modules/socket.io-adapter ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+166 timing idealTree:node_modules/socket.io-adapter/node_modules/debug Completed in 1ms
+167 timing idealTree:node_modules/socket.io-adapter/node_modules/ms Completed in 0ms
+168 timing idealTree:node_modules/socket.io-adapter/node_modules/ws Completed in 0ms
+169 silly placeDep node_modules/socket.io-parser ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+170 timing idealTree:node_modules/socket.io-parser/node_modules/debug Completed in 0ms
+171 timing idealTree:node_modules/socket.io-parser/node_modules/ms Completed in 0ms
+172 silly placeDep node_modules/socket.io ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+173 timing idealTree:node_modules/socket.io/node_modules/debug Completed in 1ms
+174 timing idealTree:node_modules/socket.io/node_modules/ms Completed in 0ms
+175 timing idealTree:node_modules/node-red-dashboard/node_modules/send/node_modules/encodeurl Completed in 0ms
+176 timing idealTree:buildDeps Completed in 154ms
+177 timing idealTree:fixDepFlags Completed in 2ms
+178 timing idealTree Completed in 342ms
+179 timing reify:loadTrees Completed in 343ms
+180 timing reify:diffTrees Completed in 11ms
+181 silly reify moves {}
+182 timing reify:retireShallow Completed in 1ms
+183 timing reify:createSparse Completed in 13ms
+184 timing reify:loadBundles Completed in 0ms
+185 silly audit bulk request {
+185 silly audit   '@babel/runtime': [ '7.24.5' ],
+185 silly audit   '@mapbox/node-pre-gyp': [ '1.0.11' ],
+185 silly audit   '@node-red/editor-api': [ '3.1.9' ],
+185 silly audit   '@node-red/editor-client': [ '3.1.9' ],
+185 silly audit   '@node-red/nodes': [ '3.1.9' ],
+185 silly audit   '@node-red/registry': [ '3.1.9' ],
+185 silly audit   '@node-red/runtime': [ '3.1.9' ],
+185 silly audit   '@node-red/util': [ '3.1.9' ],
+185 silly audit   '@sindresorhus/is': [ '5.6.0' ],
+185 silly audit   '@szmarczak/http-timer': [ '5.0.1' ],
+185 silly audit   '@types/http-cache-semantics': [ '4.0.4' ],
+185 silly audit   abbrev: [ '1.1.1' ],
+185 silly audit   accepts: [ '1.3.8' ],
+185 silly audit   acorn: [ '8.8.2' ],
+185 silly audit   'acorn-walk': [ '8.2.0' ],
+185 silly audit   'agent-base': [ '6.0.2' ],
+185 silly audit   debug: [ '4.3.4', '2.6.9', '4.3.7' ],
+185 silly audit   ms: [ '2.1.2', '2.0.0', '2.1.3' ],
+185 silly audit   ajv: [ '8.12.0' ],
+185 silly audit   'ansi-colors': [ '4.1.3' ],
+185 silly audit   'ansi-regex': [ '5.0.1' ],
+185 silly audit   'append-field': [ '1.0.0' ],
+185 silly audit   aproba: [ '2.0.0' ],
+185 silly audit   'are-we-there-yet': [ '2.0.0' ],
+185 silly audit   argparse: [ '2.0.1' ],
+185 silly audit   'array-flatten': [ '1.1.1' ],
+185 silly audit   'async-mutex': [ '0.4.0' ],
+185 silly audit   asynckit: [ '0.4.0' ],
+185 silly audit   axios: [ '1.6.8' ],
+185 silly audit   'balanced-match': [ '1.0.2' ],
+185 silly audit   'base64-js': [ '1.5.1' ],
+185 silly audit   'basic-auth': [ '2.0.1' ],
+185 silly audit   bcrypt: [ '5.1.0', '5.1.1' ],
+185 silly audit   bcryptjs: [ '2.4.3' ],
+185 silly audit   bl: [ '4.1.0' ],
+185 silly audit   'body-parser': [ '1.20.2' ],
+185 silly audit   'iconv-lite': [ '0.4.24', '0.6.3' ],
+185 silly audit   boolbase: [ '1.0.0' ],
+185 silly audit   'brace-expansion': [ '1.1.11' ],
+185 silly audit   buffer: [ '5.7.1' ],
+185 silly audit   'buffer-from': [ '1.1.2' ],
+185 silly audit   busboy: [ '1.6.0' ],
+185 silly audit   bytes: [ '3.1.2' ],
+185 silly audit   'cacheable-lookup': [ '7.0.0' ],
+185 silly audit   'cacheable-request': [ '10.2.14' ],
+185 silly audit   'call-bind': [ '1.0.7' ],
+185 silly audit   cheerio: [ '1.0.0-rc.10' ],
+185 silly audit   'cheerio-select': [ '1.6.0' ],
+185 silly audit   chownr: [ '2.0.0' ],
+185 silly audit   'cli-table': [ '0.3.11' ],
+185 silly audit   clone: [ '2.1.2' ],
+185 silly audit   'color-support': [ '1.1.3' ],
+185 silly audit   colors: [ '1.0.3' ],
+185 silly audit   'combined-stream': [ '1.0.8' ],
+185 silly audit   commist: [ '1.1.0' ],
+185 silly audit   'concat-map': [ '0.0.1' ],
+185 silly audit   'concat-stream': [ '2.0.0', '1.6.2' ],
+185 silly audit   'console-control-strings': [ '1.1.0' ],
+185 silly audit   'content-disposition': [ '0.5.4' ],
+185 silly audit   'safe-buffer': [ '5.2.1', '5.1.2' ],
+185 silly audit   'content-type': [ '1.0.5' ],
+185 silly audit   cookie: [ '0.5.0', '0.4.1', '0.6.0', '0.4.2', '0.7.2' ],
+185 silly audit   'cookie-parser': [ '1.4.6' ],
+185 silly audit   'cookie-signature': [ '1.0.6' ],
+185 silly audit   'core-util-is': [ '1.0.3' ],
+185 silly audit   cors: [ '2.8.5' ],
+185 silly audit   cronosjs: [ '1.7.1' ],
+185 silly audit   'css-select': [ '4.3.0' ],
+185 silly audit   'css-what': [ '6.1.0' ],
+185 silly audit   'decompress-response': [ '6.0.0' ],
+185 silly audit   'mimic-response': [ '3.1.0', '4.0.0' ],
+185 silly audit   'defer-to-connect': [ '2.0.1' ],
+185 silly audit   'define-data-property': [ '1.1.4' ],
+185 silly audit   'delayed-stream': [ '1.0.0' ],
+185 silly audit   delegates: [ '1.0.0' ],
+185 silly audit   denque: [ '2.1.0' ],
+185 silly audit   depd: [ '2.0.0' ],
+185 silly audit   destroy: [ '1.2.0' ],
+185 silly audit   'detect-libc': [ '2.0.3' ],
+185 silly audit   'dom-serializer': [ '1.4.1' ],
+185 silly audit   domelementtype: [ '2.3.0' ],
+185 silly audit   domhandler: [ '4.3.1' ],
+185 silly audit   domutils: [ '2.8.0' ],
+185 silly audit   duplexify: [ '4.1.3' ],
+185 silly audit   'ee-first': [ '1.1.1' ],
+185 silly audit   'emoji-regex': [ '8.0.0' ],
+185 silly audit   encodeurl: [ '1.0.2', '2.0.0' ],
+185 silly audit   'end-of-stream': [ '1.4.4' ],
+185 silly audit   enquirer: [ '2.4.1' ],
+185 silly audit   entities: [ '2.2.0' ],
+185 silly audit   'es-define-property': [ '1.0.0' ],
+185 silly audit   'es-errors': [ '1.3.0' ],
+185 silly audit   'escape-html': [ '1.0.3' ],
+185 silly audit   etag: [ '1.8.1' ],
+185 silly audit   express: [ '4.19.2' ],
+185 silly audit   'express-session': [ '1.17.3' ],
+185 silly audit   'fast-deep-equal': [ '3.1.3' ],
+185 silly audit   finalhandler: [ '1.2.0' ],
+185 silly audit   'follow-redirects': [ '1.15.6' ],
+185 silly audit   'form-data': [ '4.0.0' ],
+185 silly audit   'form-data-encoder': [ '2.1.4' ],
+185 silly audit   forwarded: [ '0.2.0' ],
+185 silly audit   fresh: [ '0.5.2' ],
+185 silly audit   'fs-extra': [ '11.1.1' ],
+185 silly audit   'fs-minipass': [ '2.1.0' ],
+185 silly audit   minipass: [ '3.3.6', '5.0.0' ],
+185 silly audit   yallist: [ '4.0.0', '2.1.2' ],
+185 silly audit   'fs.realpath': [ '1.0.0' ],
+185 silly audit   'function-bind': [ '1.1.2' ],
+185 silly audit   gauge: [ '3.0.2' ],
+185 silly audit   'get-intrinsic': [ '1.2.4' ],
+185 silly audit   'get-stream': [ '6.0.1' ],
+185 silly audit   glob: [ '7.2.3' ],
+185 silly audit   gopd: [ '1.0.1' ],
+185 silly audit   got: [ '12.6.0' ],
+185 silly audit   'graceful-fs': [ '4.2.11' ],
+185 silly audit   'has-property-descriptors': [ '1.0.2' ],
+185 silly audit   'has-proto': [ '1.0.3' ],
+185 silly audit   'has-symbols': [ '1.0.3' ],
+185 silly audit   'has-unicode': [ '2.0.1' ],
+185 silly audit   'hash-sum': [ '2.0.0' ],
+185 silly audit   hasown: [ '2.0.2' ],
+185 silly audit   'help-me': [ '3.0.0' ],
+185 silly audit   hpagent: [ '1.2.0' ],
+185 silly audit   htmlparser2: [ '6.1.0' ],
+185 silly audit   'http-cache-semantics': [ '4.1.1' ],
+185 silly audit   'http-errors': [ '2.0.0' ],
+185 silly audit   'http2-wrapper': [ '2.2.1' ],
+185 silly audit   'https-proxy-agent': [ '5.0.1' ],
+185 silly audit   i18next: [ '21.10.0' ],
+185 silly audit   ieee754: [ '1.2.1' ],
+185 silly audit   inflight: [ '1.0.6' ],
+185 silly audit   inherits: [ '2.0.4' ],
+185 silly audit   'ipaddr.js': [ '1.9.1' ],
+185 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+185 silly audit   'is-utf8': [ '0.2.1' ],
+185 silly audit   isarray: [ '1.0.0' ],
+185 silly audit   'js-sdsl': [ '4.3.0' ],
+185 silly audit   'js-yaml': [ '4.1.0' ],
+185 silly audit   'json-buffer': [ '3.0.1' ],
+185 silly audit   'json-schema-traverse': [ '1.0.0' ],
+185 silly audit   'json-stringify-safe': [ '5.0.1' ],
+185 silly audit   jsonata: [ '1.8.7' ],
+185 silly audit   jsonfile: [ '6.1.0' ],
+185 silly audit   keyv: [ '4.5.4' ],
+185 silly audit   leven: [ '2.1.0' ],
+185 silly audit   'lodash.clonedeep': [ '4.5.0' ],
+185 silly audit   'lowercase-keys': [ '3.0.0' ],
+185 silly audit   'lru-cache': [ '4.1.5', '6.0.0' ],
+185 silly audit   'make-dir': [ '3.1.0' ],
+185 silly audit   semver: [ '6.3.1', '7.5.4' ],
+185 silly audit   'media-typer': [ '1.1.0', '0.3.0' ],
+185 silly audit   memorystore: [ '1.6.7' ],
+185 silly audit   'merge-descriptors': [ '1.0.1' ],
+185 silly audit   methods: [ '1.1.2' ],
+185 silly audit   mime: [ '3.0.0', '1.6.0' ],
+185 silly audit   'mime-db': [ '1.52.0' ],
+185 silly audit   'mime-types': [ '2.1.35' ],
+185 silly audit   minimatch: [ '3.1.2' ],
+185 silly audit   minimist: [ '1.2.8' ],
+185 silly audit   minizlib: [ '2.1.2' ],
+185 silly audit   mkdirp: [ '0.5.6', '1.0.4' ],
+185 silly audit   moment: [ '2.29.4' ],
+185 silly audit   'moment-timezone': [ '0.5.43' ],
+185 silly audit   mqtt: [ '4.3.7' ],
+185 silly audit   'mqtt-packet': [ '6.10.0' ],
+185 silly audit   multer: [ '1.4.5-lts.1' ],
+185 silly audit   'readable-stream': [ '2.3.8', '3.6.2' ],
+185 silly audit   string_decoder: [ '1.1.1', '1.3.0' ],
+185 silly audit   mustache: [ '4.2.0' ],
+185 silly audit   'mute-stream': [ '0.0.8' ],
+185 silly audit   negotiator: [ '0.6.3', '0.6.4' ],
+185 silly audit   'node-addon-api': [ '5.1.0' ],
+185 silly audit   'node-fetch': [ '2.7.0' ],
+185 silly audit   'node-red': [ '3.1.9' ],
+185 silly audit   'node-red-admin': [ '3.1.3' ],
+185 silly audit   'node-watch': [ '0.7.4' ],
+185 silly audit   nopt: [ '5.0.0' ],
+185 silly audit   'normalize-url': [ '8.0.1' ],
+185 silly audit   npmlog: [ '5.0.1' ],
+185 silly audit   'nth-check': [ '2.1.1' ],
+185 silly audit   'number-allocator': [ '1.0.14' ],
+185 silly audit   oauth2orize: [ '1.11.1' ],
+185 silly audit   'object-assign': [ '4.1.1' ],
+185 silly audit   'object-inspect': [ '1.13.1' ],
+185 silly audit   'on-finished': [ '2.4.1' ],
+185 silly audit   'on-headers': [ '1.0.2', '1.1.0' ],
+185 silly audit   once: [ '1.4.0' ],
+185 silly audit   'p-cancelable': [ '3.0.0' ],
+185 silly audit   parse5: [ '6.0.1' ],
+185 silly audit   'parse5-htmlparser2-tree-adapter': [ '6.0.1' ],
+185 silly audit   parseurl: [ '1.3.3' ],
+185 silly audit   passport: [ '0.6.0' ],
+185 silly audit   'passport-http-bearer': [ '1.0.1' ],
+185 silly audit   'passport-oauth2-client-password': [ '0.1.2' ],
+185 silly audit   'passport-strategy': [ '1.0.0' ],
+185 silly audit   'path-is-absolute': [ '1.0.1' ],
+185 silly audit   'path-to-regexp': [ '0.1.7' ],
+185 silly audit   pause: [ '0.0.1' ],
+185 silly audit   'process-nextick-args': [ '2.0.1' ],
+185 silly audit   'proxy-addr': [ '2.0.7' ],
+185 silly audit   'proxy-from-env': [ '1.1.0' ],
+185 silly audit   pseudomap: [ '1.0.2' ],
+185 silly audit   psl: [ '1.9.0' ],
+185 silly audit   pump: [ '3.0.0' ],
+185 silly audit   punycode: [ '2.3.1' ],
+185 silly audit   qs: [ '6.11.0' ],
+185 silly audit   querystringify: [ '2.2.0' ],
+185 silly audit   'quick-lru': [ '5.1.1' ],
+185 silly audit   'random-bytes': [ '1.0.0' ],
+185 silly audit   'range-parser': [ '1.2.1' ],
+185 silly audit   'raw-body': [ '2.5.2' ],
+185 silly audit   read: [ '1.0.7' ],
+185 silly audit   'regenerator-runtime': [ '0.14.1' ],
+185 silly audit   reinterval: [ '1.1.0' ],
+185 silly audit   'require-from-string': [ '2.0.2' ],
+185 silly audit   'requires-port': [ '1.0.0' ],
+185 silly audit   'resolve-alpn': [ '1.2.1' ],
+185 silly audit   responselike: [ '3.0.0' ],
+185 silly audit   rfdc: [ '1.3.1' ],
+185 silly audit   rimraf: [ '3.0.2' ],
+185 silly audit   'safer-buffer': [ '2.1.2' ],
+185 silly audit   sax: [ '1.3.0' ],
+185 silly audit   send: [ '0.18.0', '0.19.0' ],
+185 silly audit   'serve-static': [ '1.15.0', '1.16.2' ],
+185 silly audit   'set-blocking': [ '2.0.0' ],
+185 silly audit   'set-function-length': [ '1.2.2' ],
+185 silly audit   setprototypeof: [ '1.2.0' ],
+185 silly audit   'side-channel': [ '1.0.6' ],
+185 silly audit   'signal-exit': [ '3.0.7' ],
+185 silly audit   split2: [ '3.2.2' ],
+185 silly audit   statuses: [ '2.0.1' ],
+185 silly audit   'stream-shift': [ '1.0.3' ],
+185 silly audit   streamsearch: [ '1.1.0' ],
+185 silly audit   'string-width': [ '4.2.3' ],
+185 silly audit   'strip-ansi': [ '6.0.1' ],
+185 silly audit   tar: [ '6.2.1' ],
+185 silly audit   toidentifier: [ '1.0.1' ],
+185 silly audit   'tough-cookie': [ '4.1.3' ],
+185 silly audit   universalify: [ '0.2.0', '2.0.1' ],
+185 silly audit   tr46: [ '0.0.3' ],
+185 silly audit   tslib: [ '2.6.2' ],
+185 silly audit   'type-is': [ '1.6.18' ],
+185 silly audit   typedarray: [ '0.0.6' ],
+185 silly audit   'uglify-js': [ '3.17.4' ],
+185 silly audit   'uid-safe': [ '2.1.5' ],
+185 silly audit   uid2: [ '0.0.4' ],
+185 silly audit   unpipe: [ '1.0.0' ],
+185 silly audit   'uri-js': [ '4.4.1' ],
+185 silly audit   'url-parse': [ '1.5.10' ],
+185 silly audit   'util-deprecate': [ '1.0.2' ],
+185 silly audit   'utils-merge': [ '1.0.1' ],
+185 silly audit   uuid: [ '9.0.0' ],
+185 silly audit   vary: [ '1.1.2' ],
+185 silly audit   'webidl-conversions': [ '3.0.1' ],
+185 silly audit   'whatwg-url': [ '5.0.0' ],
+185 silly audit   'wide-align': [ '1.1.5' ],
+185 silly audit   wrappy: [ '1.0.2' ],
+185 silly audit   ws: [ '7.5.6', '8.17.1' ],
+185 silly audit   xml2js: [ '0.6.2' ],
+185 silly audit   xmlbuilder: [ '11.0.1' ],
+185 silly audit   xtend: [ '4.0.2' ],
+185 silly audit   'node-red-dashboard': [ '3.6.6' ],
+185 silly audit   'node-red-node-base64': [ '1.0.0' ],
+185 silly audit   compression: [ '1.8.1' ],
+185 silly audit   gridstack: [ '0.6.4' ],
+185 silly audit   'socket.io': [ '4.8.1' ],
+185 silly audit   compressible: [ '2.0.18' ],
+185 silly audit   jquery: [ '3.7.1' ],
+185 silly audit   base64id: [ '2.0.0' ],
+185 silly audit   'engine.io': [ '6.6.4' ],
+185 silly audit   'socket.io-adapter': [ '2.5.5' ],
+185 silly audit   'socket.io-parser': [ '4.2.4' ],
+185 silly audit   '@types/cors': [ '2.8.19' ],
+185 silly audit   '@types/node': [ '24.3.0' ],
+185 silly audit   'engine.io-parser': [ '5.2.3' ],
+185 silly audit   'undici-types': [ '7.10.0' ],
+185 silly audit   '@socket.io/component-emitter': [ '3.1.2' ]
+185 silly audit }
+186 silly tarball no local data for @socket.io/component-emitter@https://registry.npmjs.org/@socket.io/component-emitter/-/component-emitter-3.1.2.tgz. Extracting by manifest.
+187 silly tarball no local data for undici-types@https://registry.npmjs.org/undici-types/-/undici-types-7.10.0.tgz. Extracting by manifest.
+188 silly tarball no local data for engine.io-parser@https://registry.npmjs.org/engine.io-parser/-/engine.io-parser-5.2.3.tgz. Extracting by manifest.
+189 silly tarball no local data for @types/node@https://registry.npmjs.org/@types/node/-/node-24.3.0.tgz. Extracting by manifest.
+190 silly tarball no local data for @types/cors@https://registry.npmjs.org/@types/cors/-/cors-2.8.19.tgz. Extracting by manifest.
+191 silly tarball no local data for socket.io-parser@https://registry.npmjs.org/socket.io-parser/-/socket.io-parser-4.2.4.tgz. Extracting by manifest.
+192 silly tarball no local data for socket.io-adapter@https://registry.npmjs.org/socket.io-adapter/-/socket.io-adapter-2.5.5.tgz. Extracting by manifest.
+193 silly tarball no local data for engine.io@https://registry.npmjs.org/engine.io/-/engine.io-6.6.4.tgz. Extracting by manifest.
+194 silly tarball no local data for base64id@https://registry.npmjs.org/base64id/-/base64id-2.0.0.tgz. Extracting by manifest.
+195 silly tarball no local data for jquery@https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz. Extracting by manifest.
+196 silly tarball no local data for compressible@https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz. Extracting by manifest.
+197 silly tarball no local data for socket.io@https://registry.npmjs.org/socket.io/-/socket.io-4.8.1.tgz. Extracting by manifest.
+198 silly tarball no local data for compression@https://registry.npmjs.org/compression/-/compression-1.8.1.tgz. Extracting by manifest.
+199 silly tarball no local data for gridstack@https://registry.npmjs.org/gridstack/-/gridstack-0.6.4.tgz. Extracting by manifest.
+200 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+201 silly tarball no local data for node-red-node-base64@https://registry.npmjs.org/node-red-node-base64/-/node-red-node-base64-1.0.0.tgz. Extracting by manifest.
+202 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-4.3.7.tgz. Extracting by manifest.
+203 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+204 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-4.3.7.tgz. Extracting by manifest.
+205 silly tarball no local data for ws@https://registry.npmjs.org/ws/-/ws-8.17.1.tgz. Extracting by manifest.
+206 silly tarball no local data for ws@https://registry.npmjs.org/ws/-/ws-8.17.1.tgz. Extracting by manifest.
+207 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-4.3.7.tgz. Extracting by manifest.
+208 silly tarball no local data for cookie@https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz. Extracting by manifest.
+209 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+210 silly tarball no local data for node-red-dashboard@https://registry.npmjs.org/node-red-dashboard/-/node-red-dashboard-3.6.6.tgz. Extracting by manifest.
+211 silly tarball no local data for on-headers@https://registry.npmjs.org/on-headers/-/on-headers-1.1.0.tgz. Extracting by manifest.
+212 silly tarball no local data for negotiator@https://registry.npmjs.org/negotiator/-/negotiator-0.6.4.tgz. Extracting by manifest.
+213 silly tarball no local data for mime@https://registry.npmjs.org/mime/-/mime-1.6.0.tgz. Extracting by manifest.
+214 silly tarball no local data for send@https://registry.npmjs.org/send/-/send-0.19.0.tgz. Extracting by manifest.
+215 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-4.3.7.tgz. Extracting by manifest.
+216 silly tarball no local data for encodeurl@https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz. Extracting by manifest.
+217 silly tarball no local data for encodeurl@https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz. Extracting by manifest.
+218 silly tarball no local data for safe-buffer@https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz. Extracting by manifest.
+219 silly tarball no local data for serve-static@https://registry.npmjs.org/serve-static/-/serve-static-1.16.2.tgz. Extracting by manifest.
+220 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+221 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+222 http fetch GET 200 https://registry.npmjs.org/socket.io-parser/-/socket.io-parser-4.2.4.tgz 311ms (cache miss)
+223 timing reifyNode:node_modules/socket.io-parser Completed in 340ms
+224 http fetch GET 200 https://registry.npmjs.org/socket.io-adapter/-/socket.io-adapter-2.5.5.tgz 343ms (cache miss)
+225 timing reifyNode:node_modules/socket.io-adapter Completed in 371ms
+226 http fetch GET 200 https://registry.npmjs.org/base64id/-/base64id-2.0.0.tgz 383ms (cache miss)
+227 timing reifyNode:node_modules/base64id Completed in 412ms
+228 http fetch GET 200 https://registry.npmjs.org/engine.io-parser/-/engine.io-parser-5.2.3.tgz 407ms (cache miss)
+229 timing reifyNode:node_modules/engine.io-parser Completed in 433ms
+230 http fetch GET 200 https://registry.npmjs.org/@types/cors/-/cors-2.8.19.tgz 410ms (cache miss)
+231 timing reifyNode:node_modules/@types/cors Completed in 438ms
+232 http fetch GET 200 https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz 411ms (cache miss)
+233 timing reifyNode:node_modules/compressible Completed in 441ms
+234 http fetch GET 200 https://registry.npmjs.org/@socket.io/component-emitter/-/component-emitter-3.1.2.tgz 422ms (cache miss)
+235 timing reifyNode:node_modules/@socket.io/component-emitter Completed in 447ms
+236 http fetch GET 200 https://registry.npmjs.org/undici-types/-/undici-types-7.10.0.tgz 423ms (cache miss)
+237 timing reifyNode:node_modules/undici-types Completed in 449ms
+238 http fetch GET 200 https://registry.npmjs.org/compression/-/compression-1.8.1.tgz 419ms (cache miss)
+239 timing reifyNode:node_modules/compression Completed in 450ms
+240 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 420ms (cache miss)
+241 timing reifyNode:node_modules/socket.io-parser/node_modules/ms Completed in 455ms
+242 http fetch GET 200 https://registry.npmjs.org/engine.io/-/engine.io-6.6.4.tgz 430ms (cache miss)
+243 timing reifyNode:node_modules/engine.io Completed in 459ms
+244 http fetch GET 200 https://registry.npmjs.org/node-red-node-base64/-/node-red-node-base64-1.0.0.tgz 438ms (cache miss)
+245 timing reifyNode:node_modules/node-red-node-base64 Completed in 471ms
+246 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-4.3.7.tgz 465ms (cache miss)
+247 timing reifyNode:node_modules/socket.io-adapter/node_modules/debug Completed in 501ms
+248 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 466ms (cache miss)
+249 timing reifyNode:node_modules/socket.io-adapter/node_modules/ms Completed in 501ms
+250 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-4.3.7.tgz 467ms (cache miss)
+251 timing reifyNode:node_modules/socket.io-parser/node_modules/debug Completed in 502ms
+252 http fetch GET 200 https://registry.npmjs.org/ws/-/ws-8.17.1.tgz 485ms (cache miss)
+253 timing reifyNode:node_modules/socket.io-adapter/node_modules/ws Completed in 521ms
+254 http fetch GET 200 https://registry.npmjs.org/gridstack/-/gridstack-0.6.4.tgz 517ms (cache miss)
+255 timing reifyNode:node_modules/gridstack Completed in 549ms
+256 http fetch GET 200 https://registry.npmjs.org/socket.io/-/socket.io-4.8.1.tgz 552ms (cache miss)
+257 timing reifyNode:node_modules/socket.io Completed in 582ms
+258 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-4.3.7.tgz 545ms (cache miss)
+259 timing reifyNode:node_modules/engine.io/node_modules/debug Completed in 584ms
+260 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 598ms
+261 timing auditReport:getReport Completed in 601ms
+262 silly audit report {
+262 silly audit report   '@babel/runtime': [
+262 silly audit report     {
+262 silly audit report       id: 1104000,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-968p-4wvh-cqc8',
+262 silly audit report       title: 'Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups',
+262 silly audit report       severity: 'moderate',
+262 silly audit report       vulnerable_versions: '<7.26.10',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   axios: [
+262 silly audit report     {
+262 silly audit report       id: 1103618,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-jr5f-v2jv-69x6',
+262 silly audit report       title: 'axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '>=1.0.0 <1.8.2',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     },
+262 silly audit report     {
+262 silly audit report       id: 1098583,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-8hc4-vh64-cxmj',
+262 silly audit report       title: 'Server-Side Request Forgery in axios',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '>=1.3.2 <=1.7.3',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'body-parser': [
+262 silly audit report     {
+262 silly audit report       id: 1099520,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-qwcr-r2fm-qrc7',
+262 silly audit report       title: 'body-parser vulnerable to denial of service when url encoding is enabled',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '<1.20.3',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'brace-expansion': [
+262 silly audit report     {
+262 silly audit report       id: 1105443,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-v6h2-p8h4-qcjw',
+262 silly audit report       title: 'brace-expansion Regular Expression Denial of Service vulnerability',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '>=1.0.0 <=1.1.11',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   cookie: [
+262 silly audit report     {
+262 silly audit report       id: 1103907,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-pxg6-pf52-xh8x',
+262 silly audit report       title: 'cookie accepts cookie name, path, and domain with out of bounds characters',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '<0.7.0',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   express: [
+262 silly audit report     {
+262 silly audit report       id: 1100530,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-qw6h-vgh9-j6wx',
+262 silly audit report       title: 'express vulnerable to XSS via response.redirect()',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '<4.20.0',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'form-data': [
+262 silly audit report     {
+262 silly audit report       id: 1106507,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-fjxv-7rqg-78g4',
+262 silly audit report       title: 'form-data uses unsafe random function in form-data for choosing boundary',
+262 silly audit report       severity: 'critical',
+262 silly audit report       vulnerable_versions: '>=4.0.0 <4.0.4',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'on-headers': [
+262 silly audit report     {
+262 silly audit report       id: 1106812,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-76c9-3jph-rj3q',
+262 silly audit report       title: 'on-headers is vulnerable to http response header manipulation',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '<1.1.0',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'path-to-regexp': [
+262 silly audit report     {
+262 silly audit report       id: 1101850,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-9wv6-86v2-598j',
+262 silly audit report       title: 'path-to-regexp outputs backtracking regular expressions',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '<0.1.10',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     },
+262 silly audit report     {
+262 silly audit report       id: 1105199,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-rhx6-c78j-4q9w',
+262 silly audit report       title: 'path-to-regexp contains a ReDoS',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '<0.1.12',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   send: [
+262 silly audit report     {
+262 silly audit report       id: 1100526,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-m6fv-jmcg-4jfg',
+262 silly audit report       title: 'send vulnerable to template injection that can lead to XSS',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '<0.19.0',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   'serve-static': [
+262 silly audit report     {
+262 silly audit report       id: 1100528,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-cm22-4g7w-348p',
+262 silly audit report       title: 'serve-static vulnerable to template injection that can lead to XSS',
+262 silly audit report       severity: 'low',
+262 silly audit report       vulnerable_versions: '<1.16.0',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ],
+262 silly audit report   ws: [
+262 silly audit report     {
+262 silly audit report       id: 1098393,
+262 silly audit report       url: 'https://github.com/advisories/GHSA-3h5v-q93c-6h6q',
+262 silly audit report       title: 'ws affected by a DoS when handling a request with many HTTP headers',
+262 silly audit report       severity: 'high',
+262 silly audit report       vulnerable_versions: '>=7.0.0 <7.5.10',
+262 silly audit report       cwe: [Array],
+262 silly audit report       cvss: [Object]
+262 silly audit report     }
+262 silly audit report   ]
+262 silly audit report }
+263 timing metavuln:packument:cookie Completed in 3ms
+264 timing metavuln:packument:on-headers Completed in 3ms
+265 timing metavuln:packument:send Completed in 2ms
+266 timing metavuln:packument:serve-static Completed in 2ms
+267 timing metavuln:packument:ws Completed in 2ms
+268 timing metavuln:cache:get:security-advisory:@babel/runtime:xDaNmlS3J8LRk7IfDb7e9Gp3gcy/xDr1QZXCKC997SMkqKVemm2guY9vQpRI6omD11L5cfCI+STpoAdxUgnVsA== Completed in 6ms
+269 timing metavuln:cache:get:security-advisory:brace-expansion:7IQMvcVTr+svbh5KCx4Kl6FQKJ1GciM03BnJAve/5WYJjUeRzKAIrStVpfachbl3T6a7o8nYlQEVG6Ih0TNXRg== Completed in 4ms
+270 timing metavuln:cache:get:security-advisory:cookie:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 4ms
+271 timing metavuln:load:security-advisory:cookie:1103907 Completed in 1ms
+272 timing metavuln:cache:get:security-advisory:express:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 5ms
+273 timing metavuln:cache:get:security-advisory:form-data:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 5ms
+274 timing metavuln:cache:get:security-advisory:axios:cqLCyeU+3HaJNb+kaeA7yU360yestpodqPvDfJTDbjG30zeDWPzAUApY9rmoaltxNT6CmJHu60887qFPSLlmgA== Completed in 7ms
+275 timing metavuln:cache:get:security-advisory:on-headers:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 6ms
+276 timing metavuln:load:security-advisory:on-headers:1106812 Completed in 0ms
+277 timing metavuln:cache:get:security-advisory:path-to-regexp:1zdQfT/2s1/9HPIPcJl7TnWCFxsytt3sSe7T+xPf8FNpp2H4co4yvyKagGg4lKEjTVlcftvXdieAZPONp1djoQ== Completed in 6ms
+278 timing metavuln:cache:get:security-advisory:send:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 5ms
+279 timing metavuln:load:security-advisory:send:1100526 Completed in 6ms
+280 timing metavuln:cache:get:security-advisory:path-to-regexp:0sP5sOjSm2jEVzBjQIX2s9I2rZ6lj48WyfSR+oVtUzndwLs0Cww28/j1R5EWf/fv+a3hc7KtVDL8gxcHV6kAiQ== Completed in 11ms
+281 timing metavuln:cache:get:security-advisory:ws:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 12ms
+282 timing metavuln:load:security-advisory:ws:1098393 Completed in 5ms
+283 timing metavuln:cache:get:security-advisory:axios:A8udLrZcWN+DjwMEb6fshdN5n5UqnCxbUOi3f6updLXGwKik6oGDcb5NO4lCNOiL70Sj6OLiRrZ1dDDD3Cx4zQ== Completed in 19ms
+284 timing metavuln:cache:get:security-advisory:body-parser:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 21ms
+285 timing metavuln:cache:get:security-advisory:serve-static:VyBBWzRCPk4QPwU71mkZJ+QZdwW0bnbx/lUJDdvhij3t67jGrB4z2A5Ryyta1VjZgpmZ9kuyannc46B7jSSuiQ== Completed in 19ms
+286 timing metavuln:load:security-advisory:serve-static:1100528 Completed in 4ms
+287 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 621ms (cache miss)
+288 timing reifyNode:node_modules/engine.io/node_modules/ms Completed in 661ms
+289 http fetch GET 200 https://registry.npmjs.org/ws/-/ws-8.17.1.tgz 632ms (cache miss)
+290 timing reifyNode:node_modules/engine.io/node_modules/ws Completed in 670ms
+291 timing metavuln:cache:put:security-advisory:send:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 61ms
+292 timing metavuln:calculate:security-advisory:send:1100526 Completed in 72ms
+293 timing metavuln:cache:put:security-advisory:on-headers:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 68ms
+294 timing metavuln:calculate:security-advisory:on-headers:1106812 Completed in 74ms
+295 timing metavuln:cache:put:security-advisory:ws:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 56ms
+296 timing metavuln:calculate:security-advisory:ws:1098393 Completed in 73ms
+297 timing metavuln:cache:put:security-advisory:serve-static:VyBBWzRCPk4QPwU71mkZJ+QZdwW0bnbx/lUJDdvhij3t67jGrB4z2A5Ryyta1VjZgpmZ9kuyannc46B7jSSuiQ== Completed in 50ms
+298 timing metavuln:calculate:security-advisory:serve-static:1100528 Completed in 74ms
+299 http fetch GET 200 https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz 635ms (cache miss)
+300 timing reifyNode:node_modules/engine.io/node_modules/cookie Completed in 674ms
+301 timing metavuln:cache:put:security-advisory:cookie:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 70ms
+302 timing metavuln:calculate:security-advisory:cookie:1103907 Completed in 76ms
+303 http fetch GET 200 https://registry.npmjs.org/on-headers/-/on-headers-1.1.0.tgz 643ms (cache miss)
+304 timing reifyNode:node_modules/compression/node_modules/on-headers Completed in 682ms
+305 http fetch GET 200 https://registry.npmjs.org/negotiator/-/negotiator-0.6.4.tgz 669ms (cache miss)
+306 timing reifyNode:node_modules/compression/node_modules/negotiator Completed in 709ms
+307 http fetch GET 200 https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz 691ms (cache miss)
+308 timing reifyNode:node_modules/node-red-dashboard/node_modules/encodeurl Completed in 732ms
+309 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-4.3.7.tgz 699ms (cache miss)
+310 timing reifyNode:node_modules/socket.io/node_modules/debug Completed in 741ms
+311 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 693ms (cache miss)
+312 timing reifyNode:node_modules/node-red-dashboard/node_modules/ms Completed in 748ms
+313 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 696ms (cache miss)
+314 timing reifyNode:node_modules/socket.io/node_modules/ms Completed in 748ms
+315 http fetch GET 200 https://registry.npmjs.org/mime/-/mime-1.6.0.tgz 708ms (cache miss)
+316 timing reifyNode:node_modules/node-red-dashboard/node_modules/mime Completed in 748ms
+317 http fetch GET 200 https://registry.npmjs.org/send/-/send-0.19.0.tgz 709ms (cache miss)
+318 timing reifyNode:node_modules/node-red-dashboard/node_modules/send Completed in 750ms
+319 http fetch GET 200 https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz 710ms (cache miss)
+320 timing reifyNode:node_modules/node-red-dashboard/node_modules/send/node_modules/encodeurl Completed in 752ms
+321 http fetch GET 200 https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz 726ms (cache miss)
+322 timing reifyNode:node_modules/jquery Completed in 755ms
+323 http fetch GET 200 https://registry.npmjs.org/serve-static/-/serve-static-1.16.2.tgz 709ms (cache miss)
+324 timing reifyNode:node_modules/node-red-dashboard/node_modules/serve-static Completed in 758ms
+325 http fetch GET 200 https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz 715ms (cache miss)
+326 timing reifyNode:node_modules/compression/node_modules/safe-buffer Completed in 758ms
+327 http fetch GET 200 https://registry.npmjs.org/body-parser 162ms (cache miss)
+328 timing metavuln:packument:body-parser Completed in 163ms
+329 timing metavuln:load:security-advisory:body-parser:1099520 Completed in 1ms
+330 http fetch GET 200 https://registry.npmjs.org/@types/node/-/node-24.3.0.tgz 746ms (cache miss)
+331 timing reifyNode:node_modules/@types/node Completed in 773ms
+332 timing metavuln:cache:put:security-advisory:body-parser:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 12ms
+333 timing metavuln:calculate:security-advisory:body-parser:1099520 Completed in 176ms
+334 http fetch GET 200 https://registry.npmjs.org/axios 195ms (cache miss)
+335 timing metavuln:packument:axios Completed in 198ms
+336 timing metavuln:load:security-advisory:axios:1103618 Completed in 3ms
+337 timing metavuln:load:security-advisory:axios:1098583 Completed in 1ms
+338 http fetch GET 200 https://registry.npmjs.org/brace-expansion 217ms (cache miss)
+339 timing metavuln:packument:brace-expansion Completed in 218ms
+340 timing metavuln:load:security-advisory:brace-expansion:1105443 Completed in 0ms
+341 timing metavuln:cache:put:security-advisory:axios:A8udLrZcWN+DjwMEb6fshdN5n5UqnCxbUOi3f6updLXGwKik6oGDcb5NO4lCNOiL70Sj6OLiRrZ1dDDD3Cx4zQ== Completed in 17ms
+342 timing metavuln:calculate:security-advisory:axios:1098583 Completed in 220ms
+343 timing metavuln:cache:put:security-advisory:axios:cqLCyeU+3HaJNb+kaeA7yU360yestpodqPvDfJTDbjG30zeDWPzAUApY9rmoaltxNT6CmJHu60887qFPSLlmgA== Completed in 20ms
+344 timing metavuln:calculate:security-advisory:axios:1103618 Completed in 221ms
+345 http fetch GET 200 https://registry.npmjs.org/path-to-regexp 222ms (cache miss)
+346 timing metavuln:packument:path-to-regexp Completed in 223ms
+347 timing metavuln:load:security-advisory:path-to-regexp:1101850 Completed in 1ms
+348 timing metavuln:load:security-advisory:path-to-regexp:1105199 Completed in 1ms
+349 http fetch GET 200 https://registry.npmjs.org/form-data 225ms (cache miss)
+350 timing metavuln:packument:form-data Completed in 226ms
+351 timing metavuln:load:security-advisory:form-data:1106507 Completed in 0ms
+352 timing metavuln:cache:put:security-advisory:brace-expansion:7IQMvcVTr+svbh5KCx4Kl6FQKJ1GciM03BnJAve/5WYJjUeRzKAIrStVpfachbl3T6a7o8nYlQEVG6Ih0TNXRg== Completed in 19ms
+353 timing metavuln:calculate:security-advisory:brace-expansion:1105443 Completed in 238ms
+354 http fetch GET 200 https://registry.npmjs.org/@babel%2fruntime 242ms (cache miss)
+355 timing metavuln:packument:@babel/runtime Completed in 244ms
+356 timing metavuln:load:security-advisory:@babel/runtime:1104000 Completed in 3ms
+357 timing metavuln:cache:put:security-advisory:path-to-regexp:1zdQfT/2s1/9HPIPcJl7TnWCFxsytt3sSe7T+xPf8FNpp2H4co4yvyKagGg4lKEjTVlcftvXdieAZPONp1djoQ== Completed in 22ms
+358 timing metavuln:calculate:security-advisory:path-to-regexp:1101850 Completed in 247ms
+359 timing metavuln:cache:put:security-advisory:path-to-regexp:0sP5sOjSm2jEVzBjQIX2s9I2rZ6lj48WyfSR+oVtUzndwLs0Cww28/j1R5EWf/fv+a3hc7KtVDL8gxcHV6kAiQ== Completed in 24ms
+360 timing metavuln:calculate:security-advisory:path-to-regexp:1105199 Completed in 248ms
+361 timing metavuln:cache:put:security-advisory:form-data:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 23ms
+362 timing metavuln:calculate:security-advisory:form-data:1106507 Completed in 249ms
+363 http fetch GET 200 https://registry.npmjs.org/express 252ms (cache miss)
+364 timing metavuln:packument:express Completed in 258ms
+365 timing metavuln:load:security-advisory:express:1100530 Completed in 3ms
+366 timing metavuln:cache:put:security-advisory:@babel/runtime:xDaNmlS3J8LRk7IfDb7e9Gp3gcy/xDr1QZXCKC997SMkqKVemm2guY9vQpRI6omD11L5cfCI+STpoAdxUgnVsA== Completed in 20ms
+367 timing metavuln:calculate:security-advisory:@babel/runtime:1104000 Completed in 267ms
+368 timing metavuln:cache:put:security-advisory:express:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 7ms
+369 timing metavuln:calculate:security-advisory:express:1100530 Completed in 268ms
+370 timing metavuln:cache:get:security-advisory:i18next:l4tbfjbVOZGuH/00FuoHxAf5DtkJBCMqzu0CQ4juWz1pfNe0diGF78qD/NikjjOQugC9THUj3QGPzO/X2ByTaQ== Completed in 1ms
+371 http fetch GET 200 https://registry.npmjs.org/node-red-dashboard/-/node-red-dashboard-3.6.6.tgz 936ms (cache miss)
+372 warn deprecated node-red-dashboard@3.6.6: No longer maintained - please look at alternatives such as @flowfuse/node-red-dashboard or node-red-contrib-uibuilder
+373 timing reifyNode:node_modules/node-red-dashboard Completed in 974ms
+374 timing reify:unpack Completed in 975ms
+375 timing reify:unretire Completed in 0ms
+376 timing build:queue Completed in 2ms
+377 timing build:link:node_modules/node-red-dashboard/node_modules/mime Completed in 2ms
+378 timing build:link Completed in 2ms
+379 info run node-red-dashboard@3.6.6 postinstall node_modules/node-red-dashboard node fixgrid.js
+380 http fetch GET 200 https://registry.npmjs.org/i18next 128ms (cache miss)
+381 timing metavuln:packument:i18next Completed in 137ms
+382 timing metavuln:load:security-advisory:i18next:xDaNmlS3J8LRk7IfDb7e9Gp3gcy/xDr1QZXCKC997SMkqKVemm2guY9vQpRI6omD11L5cfCI+STpoAdxUgnVsA== Completed in 23ms
+383 timing metavuln:cache:put:security-advisory:i18next:l4tbfjbVOZGuH/00FuoHxAf5DtkJBCMqzu0CQ4juWz1pfNe0diGF78qD/NikjjOQugC9THUj3QGPzO/X2ByTaQ== Completed in 6ms
+384 timing metavuln:calculate:security-advisory:i18next:xDaNmlS3J8LRk7IfDb7e9Gp3gcy/xDr1QZXCKC997SMkqKVemm2guY9vQpRI6omD11L5cfCI+STpoAdxUgnVsA== Completed in 166ms
+385 timing metavuln:cache:get:security-advisory:node-red-admin:CSQNl+DChhnZWghyj84n9sRJR7A0L2hpnR1ONT5GZO2xyEOOrQ4C2YpjS4Ndd0ENdYrcSqspmDlRPxFGLk473Q== Completed in 1ms
+386 info run node-red-dashboard@3.6.6 postinstall { code: 0, signal: null }
+387 timing build:run:postinstall:node_modules/node-red-dashboard Completed in 56ms
+388 timing build:run:postinstall Completed in 56ms
+389 timing build:deps Completed in 60ms
+390 timing build Completed in 60ms
+391 timing reify:build Completed in 60ms
+392 timing reify:trash Completed in 0ms
+393 timing reify:save Completed in 42ms
+394 http fetch GET 200 https://registry.npmjs.org/node-red-admin 65ms (cache miss)
+395 timing metavuln:packument:node-red-admin Completed in 66ms
+396 timing metavuln:load:security-advisory:node-red-admin:cqLCyeU+3HaJNb+kaeA7yU360yestpodqPvDfJTDbjG30zeDWPzAUApY9rmoaltxNT6CmJHu60887qFPSLlmgA== Completed in 2ms
+397 timing metavuln:cache:put:security-advisory:node-red-admin:CSQNl+DChhnZWghyj84n9sRJR7A0L2hpnR1ONT5GZO2xyEOOrQ4C2YpjS4Ndd0ENdYrcSqspmDlRPxFGLk473Q== Completed in 14ms
+398 timing metavuln:calculate:security-advisory:node-red-admin:cqLCyeU+3HaJNb+kaeA7yU360yestpodqPvDfJTDbjG30zeDWPzAUApY9rmoaltxNT6CmJHu60887qFPSLlmgA== Completed in 82ms
+399 timing metavuln:cache:get:security-advisory:@node-red/editor-api:ESczJjBjy21KcbVq362XWZylQcU0pRIENIjkTnUCsRt+0KNhvA57wEPEyXc/2agDt+N2c8f6LfqLjM49Rr14oQ== Completed in 1ms
+400 timing metavuln:cache:get:security-advisory:express:jvTd6gzTcOHtTpI+4CX7Ne4qICdj+n1Uun+dHPDk1JAyy9ltqA8JnsvVhBi+M0Y+kR5QoSv5YqjecJACWBUhEA== Completed in 0ms
+401 timing metavuln:load:security-advisory:express:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 6ms
+402 timing metavuln:cache:get:security-advisory:@node-red/nodes:GAPB5oHP0LfYPCGozPUN0/aJdOifjwvIQjQrPA7Zf7WaeeJVU5JIptP6lgCGsfnRVhPRDyOyaX3cGEKctiHu5g== Completed in 6ms
+403 timing metavuln:cache:put:security-advisory:express:jvTd6gzTcOHtTpI+4CX7Ne4qICdj+n1Uun+dHPDk1JAyy9ltqA8JnsvVhBi+M0Y+kR5QoSv5YqjecJACWBUhEA== Completed in 4ms
+404 timing metavuln:calculate:security-advisory:express:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 10ms
+405 http fetch GET 200 https://registry.npmjs.org/@node-red%2feditor-api 153ms (cache miss)
+406 timing metavuln:packument:@node-red/editor-api Completed in 155ms
+407 timing metavuln:load:security-advisory:@node-red/editor-api:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 7ms
+408 http fetch GET 200 https://registry.npmjs.org/@node-red%2fnodes 169ms (cache miss)
+409 timing metavuln:packument:@node-red/nodes Completed in 171ms
+410 timing metavuln:load:security-advisory:@node-red/nodes:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 4ms
+411 timing metavuln:cache:put:security-advisory:@node-red/editor-api:ESczJjBjy21KcbVq362XWZylQcU0pRIENIjkTnUCsRt+0KNhvA57wEPEyXc/2agDt+N2c8f6LfqLjM49Rr14oQ== Completed in 16ms
+412 timing metavuln:calculate:security-advisory:@node-red/editor-api:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 178ms
+413 timing metavuln:cache:put:security-advisory:@node-red/nodes:GAPB5oHP0LfYPCGozPUN0/aJdOifjwvIQjQrPA7Zf7WaeeJVU5JIptP6lgCGsfnRVhPRDyOyaX3cGEKctiHu5g== Completed in 5ms
+414 timing metavuln:calculate:security-advisory:@node-red/nodes:uoEU0GS6gk35ZdcQ5nagZYzZcDz5Th0PEvPIVa8rzwbO20pRdxYbAhpIm6Wc5MALXoWb1C4X8WqCtH02U0Wo1A== Completed in 180ms
+415 timing metavuln:cache:get:security-advisory:minimatch:EdzP79sukXfwnaTxyFO/a1+fXPBBvIH9NlsgWGTGWGSpQkNPxYQxFaMxiKCAwfckwBABbsvD1jCrk+QZ4W56Rw== Completed in 0ms
+416 http fetch GET 200 https://registry.npmjs.org/minimatch 76ms (cache miss)
+417 timing metavuln:packument:minimatch Completed in 77ms
+418 timing metavuln:load:security-advisory:minimatch:7IQMvcVTr+svbh5KCx4Kl6FQKJ1GciM03BnJAve/5WYJjUeRzKAIrStVpfachbl3T6a7o8nYlQEVG6Ih0TNXRg== Completed in 2ms
+419 timing metavuln:cache:put:security-advisory:minimatch:EdzP79sukXfwnaTxyFO/a1+fXPBBvIH9NlsgWGTGWGSpQkNPxYQxFaMxiKCAwfckwBABbsvD1jCrk+QZ4W56Rw== Completed in 3ms
+420 timing metavuln:calculate:security-advisory:minimatch:7IQMvcVTr+svbh5KCx4Kl6FQKJ1GciM03BnJAve/5WYJjUeRzKAIrStVpfachbl3T6a7o8nYlQEVG6Ih0TNXRg== Completed in 82ms
+421 timing metavuln:cache:get:security-advisory:@node-red/nodes:GrFu1PUuV0hJAN8B8Bmfp/F/aPV9iT/r+tULQi1NQiXvg5DwKywK9tEeDyLgLedgDqWkiFbiwe9QGGSrrmKIdg== Completed in 3ms
+422 timing metavuln:load:security-advisory:@node-red/nodes:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 4ms
+423 timing metavuln:cache:get:security-advisory:express:sb5aHYxuv7oTd2v1ApotGTTuwOWqb9o3qRQ2W5Aju5V6v7nYbGS+2GR0OxQkrB3Sgzu051IbP4LwzpKgrH2WGQ== Completed in 7ms
+424 timing metavuln:load:security-advisory:express:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 6ms
+425 timing metavuln:cache:get:security-advisory:cookie-parser:wMGY3CTwe1TilEBppkXmFEhwLd0qajxRq2E+aSYE5xmodo241jSbmUsYne+laUgMsb4eY82rGeNCJeLwFX3edQ== Completed in 13ms
+426 timing metavuln:cache:get:security-advisory:express-session:RFFw5smL0rZuDKrfLxn6699poueLzOCubLBSzyfAqaGQ6Eq4WbWvd70fXxwEsYVZTTDGSh5+AhanApzKk8vNmQ== Completed in 13ms
+427 timing metavuln:cache:put:security-advisory:express:sb5aHYxuv7oTd2v1ApotGTTuwOWqb9o3qRQ2W5Aju5V6v7nYbGS+2GR0OxQkrB3Sgzu051IbP4LwzpKgrH2WGQ== Completed in 6ms
+428 timing metavuln:calculate:security-advisory:express:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 19ms
+429 timing metavuln:cache:put:security-advisory:@node-red/nodes:GrFu1PUuV0hJAN8B8Bmfp/F/aPV9iT/r+tULQi1NQiXvg5DwKywK9tEeDyLgLedgDqWkiFbiwe9QGGSrrmKIdg== Completed in 12ms
+430 timing metavuln:calculate:security-advisory:@node-red/nodes:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 19ms
+431 http fetch GET 200 https://registry.npmjs.org/cookie-parser 76ms (cache miss)
+432 timing metavuln:packument:cookie-parser Completed in 77ms
+433 timing metavuln:load:security-advisory:cookie-parser:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 1ms
+434 http fetch GET 200 https://registry.npmjs.org/express-session 78ms (cache miss)
+435 timing metavuln:packument:express-session Completed in 79ms
+436 timing metavuln:load:security-advisory:express-session:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 1ms
+437 timing metavuln:cache:put:security-advisory:cookie-parser:wMGY3CTwe1TilEBppkXmFEhwLd0qajxRq2E+aSYE5xmodo241jSbmUsYne+laUgMsb4eY82rGeNCJeLwFX3edQ== Completed in 7ms
+438 timing metavuln:calculate:security-advisory:cookie-parser:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 85ms
+439 timing metavuln:cache:put:security-advisory:express-session:RFFw5smL0rZuDKrfLxn6699poueLzOCubLBSzyfAqaGQ6Eq4WbWvd70fXxwEsYVZTTDGSh5+AhanApzKk8vNmQ== Completed in 6ms
+440 timing metavuln:calculate:security-advisory:express-session:EFt7h/FZLeopARa06+F2CBY5ItUm007mP/cHgZjTJZX1MeIwg3JD7toSioRoDeE8wm5VdkimqlS+CnuPhZqbIg== Completed in 87ms
+441 timing metavuln:cache:get:security-advisory:@node-red/editor-api:gkn5Wz4IsqobDVSdpQdUio9y1kbpQGMb3svHjFogB9fBkchzVdfM4pyOgOf5R0BwzitPePcqyc4D7dKs3cWyJA== Completed in 1ms
+442 timing metavuln:load:security-advisory:@node-red/editor-api:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 9ms
+443 timing metavuln:cache:get:security-advisory:@node-red/runtime:4egPVIOfn1+81vt/C0cRku0gkOaAc25MIw5p8uHJucOGWrIVAuWstyEi59LfBBkuWnuUTg2Afaf1m8w9rNoFLw== Completed in 10ms
+444 timing metavuln:cache:get:security-advisory:node-red:7ONkx0AukNofVjhHOBVwT+PIvQ+VOcE+wAZoRMgPQP1uYDah+cRjZhuuVlBBpyYzoYKOynEJQNu00WUmepptOw== Completed in 11ms
+445 timing metavuln:cache:put:security-advisory:@node-red/editor-api:gkn5Wz4IsqobDVSdpQdUio9y1kbpQGMb3svHjFogB9fBkchzVdfM4pyOgOf5R0BwzitPePcqyc4D7dKs3cWyJA== Completed in 6ms
+446 timing metavuln:calculate:security-advisory:@node-red/editor-api:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 16ms
+447 http fetch GET 200 https://registry.npmjs.org/node-red 81ms (cache miss)
+448 timing metavuln:packument:node-red Completed in 85ms
+449 timing metavuln:load:security-advisory:node-red:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 17ms
+450 timing metavuln:cache:put:security-advisory:node-red:7ONkx0AukNofVjhHOBVwT+PIvQ+VOcE+wAZoRMgPQP1uYDah+cRjZhuuVlBBpyYzoYKOynEJQNu00WUmepptOw== Completed in 4ms
+451 timing metavuln:calculate:security-advisory:node-red:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 106ms
+452 http fetch GET 200 https://registry.npmjs.org/@node-red%2fruntime 115ms (cache miss)
+453 timing metavuln:packument:@node-red/runtime Completed in 115ms
+454 timing metavuln:load:security-advisory:@node-red/runtime:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 4ms
+455 timing metavuln:cache:put:security-advisory:@node-red/runtime:4egPVIOfn1+81vt/C0cRku0gkOaAc25MIw5p8uHJucOGWrIVAuWstyEi59LfBBkuWnuUTg2Afaf1m8w9rNoFLw== Completed in 5ms
+456 timing metavuln:calculate:security-advisory:@node-red/runtime:Y6ACp2DmYM+0HQ/I8CvEhLQJwNp8DOoQ76C8ObH06Y0qG40PIuVRmOi3OWzwUOTASTLCIWqeicWSO/acR3aaGQ== Completed in 124ms
+457 timing metavuln:cache:get:security-advisory:@node-red/nodes:eKbaX5t6/K6HjmUsQnrUhWL+V8OPRJU02X1P5UBQul+yZOhMEZIsoBgQ9+HcT59d0tLMoDrZxxkDdLJrZOlYNA== Completed in 0ms
+458 timing metavuln:load:security-advisory:@node-red/nodes:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 3ms
+459 timing metavuln:cache:get:security-advisory:axios:zGendEp3BQM9HQE9ViEEJD3PP5MeIewuIK2c6jO/Wgf8JLFR2T9/xCSVu2sGZm9pNB1Ibr9Z48iaKKnpZes8oA== Completed in 3ms
+460 timing metavuln:load:security-advisory:axios:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 1ms
+461 timing metavuln:cache:put:security-advisory:axios:zGendEp3BQM9HQE9ViEEJD3PP5MeIewuIK2c6jO/Wgf8JLFR2T9/xCSVu2sGZm9pNB1Ibr9Z48iaKKnpZes8oA== Completed in 4ms
+462 timing metavuln:calculate:security-advisory:axios:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 8ms
+463 timing metavuln:cache:put:security-advisory:@node-red/nodes:eKbaX5t6/K6HjmUsQnrUhWL+V8OPRJU02X1P5UBQul+yZOhMEZIsoBgQ9+HcT59d0tLMoDrZxxkDdLJrZOlYNA== Completed in 5ms
+464 timing metavuln:calculate:security-advisory:@node-red/nodes:Vc5ATTa4ISaV60JUGRLdeb3caHRdETZ1fqKy/NzbTDpqibD48B9PgAckl+9+ATZwOukNIx168QkTjvxmITFQYw== Completed in 8ms
+465 timing metavuln:cache:get:security-advisory:express-session:wMNaFhKiShCC1n8d6Vurah9Tg+OH6hUJ0QyqEQKikAdNih2n7c9rl9FOYr1SwuYmy95c0qUaicIh2p5dg7pDSQ== Completed in 0ms
+466 timing metavuln:load:security-advisory:express-session:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 2ms
+467 timing metavuln:cache:get:security-advisory:@node-red/nodes:Q7iapCtnygJZCyD0re43aRTgNV6rqiLCe5YfF7jJmRmddASHaClkQ7D3c8k1o6yHD+2SZQ7+Zvunr5k280hFFQ== Completed in 2ms
+468 timing metavuln:load:security-advisory:@node-red/nodes:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 2ms
+469 timing metavuln:cache:put:security-advisory:express-session:wMNaFhKiShCC1n8d6Vurah9Tg+OH6hUJ0QyqEQKikAdNih2n7c9rl9FOYr1SwuYmy95c0qUaicIh2p5dg7pDSQ== Completed in 5ms
+470 timing metavuln:calculate:security-advisory:express-session:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 8ms
+471 timing metavuln:cache:put:security-advisory:@node-red/nodes:Q7iapCtnygJZCyD0re43aRTgNV6rqiLCe5YfF7jJmRmddASHaClkQ7D3c8k1o6yHD+2SZQ7+Zvunr5k280hFFQ== Completed in 5ms
+472 timing metavuln:calculate:security-advisory:@node-red/nodes:O+Ys/f4bZubU3jA9Sqz4HIIJaATwc83W201O653Eo/4y8FTwrgSc3mrXs4p8n7svj0OzipJYTBXXWJCgp81mSQ== Completed in 9ms
+473 timing metavuln:cache:get:security-advisory:express:LRbUnr0WeU21QXyqYq0LKWnxCksZVHamePIRXV3//T9Aj7u3VWNsnM6K5ujI/Z6dfOKKNzbMDayMt+lQ7d6K3A== Completed in 0ms
+474 timing metavuln:load:security-advisory:express:1zdQfT/2s1/9HPIPcJl7TnWCFxsytt3sSe7T+xPf8FNpp2H4co4yvyKagGg4lKEjTVlcftvXdieAZPONp1djoQ== Completed in 8ms
+475 timing metavuln:cache:put:security-advisory:express:LRbUnr0WeU21QXyqYq0LKWnxCksZVHamePIRXV3//T9Aj7u3VWNsnM6K5ujI/Z6dfOKKNzbMDayMt+lQ7d6K3A== Completed in 3ms
+476 timing metavuln:calculate:security-advisory:express:1zdQfT/2s1/9HPIPcJl7TnWCFxsytt3sSe7T+xPf8FNpp2H4co4yvyKagGg4lKEjTVlcftvXdieAZPONp1djoQ== Completed in 11ms
+477 timing metavuln:cache:get:security-advisory:express:Qe6VF1gD5PmAmaVNrJr0J8EQ8Qwml8HW8gKRPrVTt49nXoALpdty5p0HEWXknOQEYO9qrvzPNstxfrAZkwfmTA== Completed in 0ms
+478 timing metavuln:load:security-advisory:express:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 13ms
+479 timing metavuln:cache:get:security-advisory:serve-static:rFrbBZRsSM/oAPkR1kIOYwnT14s34lSDNsxxJua0O3dwCHVL9UuENLbLNsnwWaFICcgsfpfgwdjwWHwu1nJzWQ== Completed in 14ms
+480 timing metavuln:load:security-advisory:serve-static:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 3ms
+481 timing metavuln:cache:put:security-advisory:express:Qe6VF1gD5PmAmaVNrJr0J8EQ8Qwml8HW8gKRPrVTt49nXoALpdty5p0HEWXknOQEYO9qrvzPNstxfrAZkwfmTA== Completed in 10ms
+482 timing metavuln:calculate:security-advisory:express:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 23ms
+483 timing metavuln:cache:put:security-advisory:serve-static:rFrbBZRsSM/oAPkR1kIOYwnT14s34lSDNsxxJua0O3dwCHVL9UuENLbLNsnwWaFICcgsfpfgwdjwWHwu1nJzWQ== Completed in 8ms
+484 timing metavuln:calculate:security-advisory:serve-static:OO84Jm+bi6L8ol/TxvTv+544ykBtTelmjwigseeY2D0sCzg0KsHTtaRRJob9h32hC3fi9i3JSBR51oHF0vvyRQ== Completed in 25ms
+485 timing metavuln:cache:get:security-advisory:express:kykTo4VuC2rM2MB0/ANQ51tOegcUPd67Lh4iIK7TUUpqt61eQaJ70XtItcffrJ8PoIYxwtnuqm5DJGT19JMA/A== Completed in 0ms
+486 timing metavuln:load:security-advisory:express:VyBBWzRCPk4QPwU71mkZJ+QZdwW0bnbx/lUJDdvhij3t67jGrB4z2A5Ryyta1VjZgpmZ9kuyannc46B7jSSuiQ== Completed in 8ms
+487 timing metavuln:cache:put:security-advisory:express:kykTo4VuC2rM2MB0/ANQ51tOegcUPd67Lh4iIK7TUUpqt61eQaJ70XtItcffrJ8PoIYxwtnuqm5DJGT19JMA/A== Completed in 8ms
+488 timing metavuln:calculate:security-advisory:express:VyBBWzRCPk4QPwU71mkZJ+QZdwW0bnbx/lUJDdvhij3t67jGrB4z2A5Ryyta1VjZgpmZ9kuyannc46B7jSSuiQ== Completed in 17ms
+489 timing metavuln:cache:get:security-advisory:@node-red/editor-api:hBMPSKXpOQeP//m0ogdSeSrxP29NLVRs3r3DwiFLqA+y6LVdglhZaesje923gxwrVi+diLMLwnQD70L8wRE89g== Completed in 1ms
+490 timing metavuln:load:security-advisory:@node-red/editor-api:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 6ms
+491 timing metavuln:cache:get:security-advisory:mqtt:4gPZcANtTelICnU+g9nZL8GV7jD7tP3jZqcfxAdIfdaxllOfLJjIUeP/X1HNcYiU2oUWoMP2xAzNgvCD6c8J0w== Completed in 8ms
+492 timing metavuln:cache:get:security-advisory:@node-red/nodes:HK/XUFKkIBVKTsIwD0+RhDTugXd8sS3zKgrZ2UBlPhzEGI/1osJLho0aF77JJVmXpyijMN4p9MRj9wYAHnexLg== Completed in 10ms
+493 timing metavuln:load:security-advisory:@node-red/nodes:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 4ms
+494 timing metavuln:cache:put:security-advisory:@node-red/editor-api:hBMPSKXpOQeP//m0ogdSeSrxP29NLVRs3r3DwiFLqA+y6LVdglhZaesje923gxwrVi+diLMLwnQD70L8wRE89g== Completed in 15ms
+495 timing metavuln:calculate:security-advisory:@node-red/editor-api:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 22ms
+496 timing metavuln:cache:put:security-advisory:@node-red/nodes:HK/XUFKkIBVKTsIwD0+RhDTugXd8sS3zKgrZ2UBlPhzEGI/1osJLho0aF77JJVmXpyijMN4p9MRj9wYAHnexLg== Completed in 9ms
+497 timing metavuln:calculate:security-advisory:@node-red/nodes:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 23ms
+498 http fetch GET 200 https://registry.npmjs.org/mqtt 162ms (cache miss)
+499 timing metavuln:packument:mqtt Completed in 168ms
+500 timing metavuln:load:security-advisory:mqtt:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 5ms
+501 timing metavuln:cache:put:security-advisory:mqtt:4gPZcANtTelICnU+g9nZL8GV7jD7tP3jZqcfxAdIfdaxllOfLJjIUeP/X1HNcYiU2oUWoMP2xAzNgvCD6c8J0w== Completed in 13ms
+502 timing metavuln:calculate:security-advisory:mqtt:N8g2qAUvG7gJk0uIxvf7eawnYiVM58YMaKRZl7X9WWy+42qPe0Hts/0lWzP3xVay7NIbSsW6+HWbKdYCtuWhlw== Completed in 186ms
+503 timing metavuln:cache:get:security-advisory:node-red:09CjsWeOY9Tg1LT83cKf/ItES9IU22zSFFFuiRUZNmQhF4gd0tn/et6iBL2wFuRwXiT0mfjvVMmgIKin842XRQ== Completed in 0ms
+504 timing metavuln:load:security-advisory:node-red:ESczJjBjy21KcbVq362XWZylQcU0pRIENIjkTnUCsRt+0KNhvA57wEPEyXc/2agDt+N2c8f6LfqLjM49Rr14oQ== Completed in 18ms
+505 timing metavuln:cache:put:security-advisory:node-red:09CjsWeOY9Tg1LT83cKf/ItES9IU22zSFFFuiRUZNmQhF4gd0tn/et6iBL2wFuRwXiT0mfjvVMmgIKin842XRQ== Completed in 4ms
+506 timing metavuln:calculate:security-advisory:node-red:ESczJjBjy21KcbVq362XWZylQcU0pRIENIjkTnUCsRt+0KNhvA57wEPEyXc/2agDt+N2c8f6LfqLjM49Rr14oQ== Completed in 23ms
+507 timing metavuln:cache:get:security-advisory:node-red:JOs2oBeffLE7CjOEnm/LFqvfzp+V3H5fhZxIYH3zMCWyWxYRprYIGJBV8Uv5uTHD68OKnluuWLcqZqWdn2t8Rg== Completed in 0ms
+508 timing metavuln:load:security-advisory:node-red:GAPB5oHP0LfYPCGozPUN0/aJdOifjwvIQjQrPA7Zf7WaeeJVU5JIptP6lgCGsfnRVhPRDyOyaX3cGEKctiHu5g== Completed in 12ms
+509 timing metavuln:cache:put:security-advisory:node-red:JOs2oBeffLE7CjOEnm/LFqvfzp+V3H5fhZxIYH3zMCWyWxYRprYIGJBV8Uv5uTHD68OKnluuWLcqZqWdn2t8Rg== Completed in 4ms
+510 timing metavuln:calculate:security-advisory:node-red:GAPB5oHP0LfYPCGozPUN0/aJdOifjwvIQjQrPA7Zf7WaeeJVU5JIptP6lgCGsfnRVhPRDyOyaX3cGEKctiHu5g== Completed in 16ms
+511 timing metavuln:cache:get:security-advisory:@node-red/nodes:0kdEYrHJRgkIy/7p3TgmmKqTzqqqt+ACFZfO3+6T2BBSrzu8gOJcClid0u0JcH44gsavTnNZwtTLjSIWDOsT5g== Completed in 0ms
+512 timing metavuln:load:security-advisory:@node-red/nodes:wMGY3CTwe1TilEBppkXmFEhwLd0qajxRq2E+aSYE5xmodo241jSbmUsYne+laUgMsb4eY82rGeNCJeLwFX3edQ== Completed in 2ms
+513 timing metavuln:cache:put:security-advisory:@node-red/nodes:0kdEYrHJRgkIy/7p3TgmmKqTzqqqt+ACFZfO3+6T2BBSrzu8gOJcClid0u0JcH44gsavTnNZwtTLjSIWDOsT5g== Completed in 4ms
+514 timing metavuln:calculate:security-advisory:@node-red/nodes:wMGY3CTwe1TilEBppkXmFEhwLd0qajxRq2E+aSYE5xmodo241jSbmUsYne+laUgMsb4eY82rGeNCJeLwFX3edQ== Completed in 7ms
+515 timing metavuln:cache:get:security-advisory:@node-red/editor-api:AnIpJLo5eupbXMWU5m83qXSjUOBicgmN34ZhbFpsOxhuSq0TWdT0xYd3GANtfLt4IQB73Eox0BRgk0cAvBtDNg== Completed in 0ms
+516 timing metavuln:load:security-advisory:@node-red/editor-api:RFFw5smL0rZuDKrfLxn6699poueLzOCubLBSzyfAqaGQ6Eq4WbWvd70fXxwEsYVZTTDGSh5+AhanApzKk8vNmQ== Completed in 3ms
+517 timing metavuln:cache:put:security-advisory:@node-red/editor-api:AnIpJLo5eupbXMWU5m83qXSjUOBicgmN34ZhbFpsOxhuSq0TWdT0xYd3GANtfLt4IQB73Eox0BRgk0cAvBtDNg== Completed in 5ms
+518 timing metavuln:calculate:security-advisory:@node-red/editor-api:RFFw5smL0rZuDKrfLxn6699poueLzOCubLBSzyfAqaGQ6Eq4WbWvd70fXxwEsYVZTTDGSh5+AhanApzKk8vNmQ== Completed in 8ms
+519 timing metavuln:cache:get:security-advisory:node-red:1j+4rZzTWIiZTeSoulNnEiSDvFmjQMKgfflrhepRZOD4jDnaKD4A9kR8Iqsm2DMmlWXak1u1H6TYxcyLXHo6zA== Completed in 0ms
+520 timing metavuln:load:security-advisory:node-red:4egPVIOfn1+81vt/C0cRku0gkOaAc25MIw5p8uHJucOGWrIVAuWstyEi59LfBBkuWnuUTg2Afaf1m8w9rNoFLw== Completed in 10ms
+521 timing metavuln:cache:put:security-advisory:node-red:1j+4rZzTWIiZTeSoulNnEiSDvFmjQMKgfflrhepRZOD4jDnaKD4A9kR8Iqsm2DMmlWXak1u1H6TYxcyLXHo6zA== Completed in 3ms
+522 timing metavuln:calculate:security-advisory:node-red:4egPVIOfn1+81vt/C0cRku0gkOaAc25MIw5p8uHJucOGWrIVAuWstyEi59LfBBkuWnuUTg2Afaf1m8w9rNoFLw== Completed in 15ms
+523 timing auditReport:init Completed in 1326ms
+524 timing reify:audit Completed in 1928ms
+525 timing reify Completed in 2298ms
+526 silly ADD node_modules/@socket.io/component-emitter
+527 silly ADD node_modules/undici-types
+528 silly ADD node_modules/engine.io-parser
+529 silly ADD node_modules/@types/node
+530 silly ADD node_modules/@types/cors
+531 silly ADD node_modules/socket.io-parser
+532 silly ADD node_modules/socket.io-parser/node_modules/ms
+533 silly ADD node_modules/socket.io-parser/node_modules/debug
+534 silly ADD node_modules/socket.io-adapter
+535 silly ADD node_modules/socket.io-adapter/node_modules/ms
+536 silly ADD node_modules/socket.io-adapter/node_modules/ws
+537 silly ADD node_modules/socket.io-adapter/node_modules/debug
+538 silly ADD node_modules/engine.io
+539 silly ADD node_modules/engine.io/node_modules/ms
+540 silly ADD node_modules/engine.io/node_modules/ws
+541 silly ADD node_modules/engine.io/node_modules/debug
+542 silly ADD node_modules/engine.io/node_modules/cookie
+543 silly ADD node_modules/base64id
+544 silly ADD node_modules/jquery
+545 silly ADD node_modules/compressible
+546 silly ADD node_modules/socket.io
+547 silly ADD node_modules/socket.io/node_modules/ms
+548 silly ADD node_modules/socket.io/node_modules/debug
+549 silly ADD node_modules/gridstack
+550 silly ADD node_modules/compression
+551 silly ADD node_modules/compression/node_modules/safe-buffer
+552 silly ADD node_modules/compression/node_modules/on-headers
+553 silly ADD node_modules/compression/node_modules/negotiator
+554 silly ADD node_modules/node-red-node-base64
+555 silly ADD node_modules/node-red-dashboard
+556 silly ADD node_modules/node-red-dashboard/node_modules/ms
+557 silly ADD node_modules/node-red-dashboard/node_modules/mime
+558 silly ADD node_modules/node-red-dashboard/node_modules/send
+559 silly ADD node_modules/node-red-dashboard/node_modules/send/node_modules/encodeurl
+560 silly ADD node_modules/node-red-dashboard/node_modules/encodeurl
+561 silly ADD node_modules/node-red-dashboard/node_modules/serve-static
+562 timing command:install Completed in 2317ms
+563 verbose exit 0
+564 timing npm Completed in 2365ms
+565 info ok

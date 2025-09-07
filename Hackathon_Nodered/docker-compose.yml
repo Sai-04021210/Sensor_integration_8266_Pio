@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  nodered:
+    image: nodered/node-red:${NODERED_VERSION}
+    container_name: node-red
+    ports:
+      - "1880:1880"   # Maps host port 1880 to container port 1880 (Node-RED UI)
+    volumes:
+      - ./workspace:/data  # Maps project-local 'local-flows' folder to /data in the container (Node-RED user data)
+    env_file:
+      - .env
+    restart: unless-stopped

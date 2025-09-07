@@ -1,0 +1,6 @@
+{
+  "name": "node-red-project",
+  "description": "Node-RED Project",
+  "version": "1.0.0",
+  "dependencies": {}
+}

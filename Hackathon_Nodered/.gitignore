@@ -1,0 +1,6 @@
+*.backup
+.config.nodes.json
+.config.users.json
+
+# Ignore internal git repos in Node-RED Projects
+projects/workspace/lib/.git/

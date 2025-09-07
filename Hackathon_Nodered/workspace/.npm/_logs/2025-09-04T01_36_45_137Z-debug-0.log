@@ -1,0 +1,226 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.19.4
+2 info using node@v16.20.2
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 0ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 5ms
+10 timing config:load:file:/usr/src/node-red/.npmrc Completed in 0ms
+11 timing config:load:user Completed in 0ms
+12 timing config:load:file:/usr/local/etc/npmrc Completed in 1ms
+13 timing config:load:global Completed in 1ms
+14 timing config:load:validate Completed in 0ms
+15 timing config:load:credentials Completed in 1ms
+16 timing config:load:setEnvs Completed in 0ms
+17 timing config:load Completed in 9ms
+18 timing npm:load:configload Completed in 9ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install node-red-dashboard node-red-contrib-qr-code node-red-node-base64 node-red-contrib-bcrypt
+22 verbose argv "install" "node-red-dashboard" "node-red-contrib-qr-code" "node-red-node-base64" "node-red-contrib-bcrypt"
+23 timing npm:load:setTitle Completed in 0ms
+24 timing config:load:flatten Completed in 1ms
+25 timing npm:load:display Completed in 2ms
+26 verbose logfile logs-max:10 dir:/data/.npm/_logs
+27 verbose logfile /data/.npm/_logs/2025-09-04T01_36_45_137Z-debug-0.log
+28 timing npm:load:logFile Completed in 4ms
+29 timing npm:load:timers Completed in 0ms
+30 timing npm:load:configScope Completed in 0ms
+31 timing npm:load Completed in 18ms
+32 timing arborist:ctor Completed in 0ms
+33 silly logfile start cleaning logs, removing 6 files
+34 timing arborist:ctor Completed in 0ms
+35 silly logfile done cleaning log files
+36 timing arborist:ctor Completed in 0ms
+37 timing idealTree:init Completed in 276ms
+38 timing idealTree:userRequests Completed in 1ms
+39 silly idealTree buildDeps
+40 silly fetch manifest node-red-dashboard@*
+41 timing arborist:ctor Completed in 0ms
+42 http fetch GET 200 https://registry.npmjs.org/node-red-dashboard 477ms (cache miss)
+43 silly fetch manifest node-red-contrib-qr-code@*
+44 http fetch GET 200 https://registry.npmjs.org/npm 803ms (cache miss)
+45 http fetch GET 404 https://registry.npmjs.org/node-red-contrib-qr-code 646ms (cache skip)
+46 http fetch GET 404 https://registry.npmjs.org/node-red-contrib-qr-code 693ms (cache skip)
+47 silly fetch manifest node-red-node-base64@*
+48 http fetch GET 200 https://registry.npmjs.org/node-red-node-base64 698ms (cache miss)
+49 silly fetch manifest node-red-contrib-bcrypt@*
+50 http fetch GET 200 https://registry.npmjs.org/node-red-contrib-bcrypt 813ms (cache miss)
+51 silly placeDep ROOT node-red-contrib-bcrypt@0.1.6 OK for: node-red-docker@3.1.9 want: *
+52 silly placeDep ROOT node-red-contrib-qr-code@ OK for: node-red-docker@3.1.9 want: *
+53 silly placeDep ROOT node-red-dashboard@3.6.6 OK for: node-red-docker@3.1.9 want: *
+54 silly placeDep ROOT node-red-node-base64@1.0.0 OK for: node-red-docker@3.1.9 want: *
+55 silly fetch manifest gridstack@^0.6.4
+56 silly fetch manifest socket.io@^4.8.1
+57 silly fetch manifest compression@^1.8.1
+58 silly fetch manifest serve-static@^1.16.2
+59 http fetch GET 200 https://registry.npmjs.org/gridstack 91ms (cache miss)
+60 http fetch GET 200 https://registry.npmjs.org/socket.io 111ms (cache miss)
+61 http fetch GET 200 https://registry.npmjs.org/compression 206ms (cache miss)
+62 http fetch GET 200 https://registry.npmjs.org/serve-static 220ms (cache miss)
+63 timing idealTree:#root Completed in 3586ms
+64 timing idealTree:node_modules/node-red-contrib-bcrypt Completed in 0ms
+65 timing idealTree:node_modules/node-red-contrib-qr-code Completed in 0ms
+66 silly placeDep ROOT compression@1.8.1 OK for: node-red-dashboard@3.6.6 want: ^1.8.1
+67 silly placeDep ROOT gridstack@0.6.4 OK for: node-red-dashboard@3.6.6 want: ^0.6.4
+68 silly placeDep node_modules/node-red-dashboard serve-static@1.16.2 OK for: node-red-dashboard@3.6.6 want: ^1.16.2
+69 silly placeDep ROOT socket.io@4.8.1 OK for: node-red-dashboard@3.6.6 want: ^4.8.1
+70 silly fetch manifest compressible@~2.0.18
+71 silly fetch manifest negotiator@~0.6.4
+72 silly fetch manifest on-headers@~1.1.0
+73 silly fetch manifest safe-buffer@5.2.1
+74 silly fetch manifest jquery@^1.8 || 2 || 3
+75 silly fetch manifest send@0.19.0
+76 silly fetch manifest encodeurl@~2.0.0
+77 silly fetch manifest debug@~4.3.2
+78 silly fetch manifest base64id@~2.0.0
+79 silly fetch manifest engine.io@~6.6.0
+80 silly fetch manifest socket.io-parser@~4.2.4
+81 silly fetch manifest socket.io-adapter@~2.5.2
+82 http fetch GET 200 https://registry.npmjs.org/negotiator 92ms (cache miss)
+83 http fetch GET 200 https://registry.npmjs.org/jquery 95ms (cache miss)
+84 http fetch GET 200 https://registry.npmjs.org/encodeurl 101ms (cache miss)
+85 http fetch GET 200 https://registry.npmjs.org/compressible 109ms (cache miss)
+86 http fetch GET 200 https://registry.npmjs.org/debug 203ms (cache miss)
+87 http fetch GET 200 https://registry.npmjs.org/send 207ms (cache miss)
+88 http fetch GET 200 https://registry.npmjs.org/safe-buffer 212ms (cache miss)
+89 http fetch GET 200 https://registry.npmjs.org/base64id 214ms (cache miss)
+90 http fetch GET 200 https://registry.npmjs.org/socket.io-adapter 214ms (cache miss)
+91 http fetch GET 200 https://registry.npmjs.org/on-headers 217ms (cache miss)
+92 http fetch GET 200 https://registry.npmjs.org/socket.io-parser 216ms (cache miss)
+93 http fetch GET 200 https://registry.npmjs.org/engine.io 221ms (cache miss)
+94 timing idealTree:node_modules/node-red-dashboard Completed in 243ms
+95 silly placeDep ROOT compressible@2.0.18 OK for: compression@1.8.1 want: ~2.0.18
+96 silly placeDep node_modules/compression negotiator@0.6.4 OK for: compression@1.8.1 want: ~0.6.4
+97 silly placeDep node_modules/compression on-headers@1.1.0 OK for: compression@1.8.1 want: ~1.1.0
+98 silly placeDep node_modules/compression safe-buffer@5.2.1 OK for: compression@1.8.1 want: 5.2.1
+99 timing idealTree:node_modules/compression Completed in 2ms
+100 timing idealTree:node_modules/compressible Completed in 0ms
+101 silly placeDep ROOT jquery@3.7.1 OK for: gridstack@0.6.4 want: ^1.8 || 2 || 3
+102 timing idealTree:node_modules/gridstack Completed in 0ms
+103 timing idealTree:node_modules/jquery Completed in 0ms
+104 timing idealTree:node_modules/node-red-node-base64 Completed in 0ms
+105 silly placeDep ROOT base64id@2.0.0 OK for: socket.io@4.8.1 want: ~2.0.0
+106 silly placeDep node_modules/socket.io debug@4.3.7 OK for: socket.io@4.8.1 want: ~4.3.2
+107 silly placeDep ROOT engine.io@6.6.4 OK for: socket.io@4.8.1 want: ~6.6.0
+108 silly placeDep ROOT socket.io-adapter@2.5.5 OK for: socket.io@4.8.1 want: ~2.5.2
+109 silly placeDep ROOT socket.io-parser@4.2.4 OK for: socket.io@4.8.1 want: ~4.2.4
+110 silly fetch manifest ms@^2.1.3
+111 silly fetch manifest @types/cors@^2.8.12
+112 silly fetch manifest @types/node@>=10.0.0
+113 silly fetch manifest cookie@~0.7.2
+114 silly fetch manifest debug@~4.3.1
+115 silly fetch manifest engine.io-parser@~5.2.1
+116 silly fetch manifest ws@~8.17.1
+117 silly fetch manifest debug@~4.3.4
+118 silly fetch manifest @socket.io/component-emitter@~3.1.0
+119 http fetch GET 200 https://registry.npmjs.org/cookie 93ms (cache miss)
+120 http fetch GET 200 https://registry.npmjs.org/ms 95ms (cache miss)
+121 http fetch GET 200 https://registry.npmjs.org/ws 109ms (cache miss)
+122 http fetch GET 200 https://registry.npmjs.org/engine.io-parser 113ms (cache miss)
+123 http fetch GET 200 https://registry.npmjs.org/@socket.io%2fcomponent-emitter 114ms (cache miss)
+124 http fetch GET 200 https://registry.npmjs.org/@types%2fcors 119ms (cache miss)
+125 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 305ms (cache miss)
+126 timing idealTree:node_modules/socket.io Completed in 326ms
+127 timing idealTree:node_modules/base64id Completed in 0ms
+128 silly fetch manifest bufferutil@^4.0.1
+129 http fetch GET 200 https://registry.npmjs.org/bufferutil 79ms (cache miss)
+130 silly fetch manifest utf-8-validate@>=5.0.2
+131 http fetch GET 200 https://registry.npmjs.org/utf-8-validate 88ms (cache miss)
+132 silly placeDep ROOT @types/cors@2.8.19 OK for: engine.io@6.6.4 want: ^2.8.12
+133 silly placeDep ROOT @types/node@24.3.0 OK for: engine.io@6.6.4 want: >=10.0.0
+134 silly placeDep node_modules/engine.io cookie@0.7.2 OK for: engine.io@6.6.4 want: ~0.7.2
+135 silly placeDep node_modules/engine.io debug@4.3.7 OK for: engine.io@6.6.4 want: ~4.3.1
+136 silly placeDep ROOT engine.io-parser@5.2.3 OK for: engine.io@6.6.4 want: ~5.2.1
+137 silly placeDep node_modules/engine.io ws@8.17.1 OK for: engine.io@6.6.4 want: ~8.17.1
+138 silly fetch manifest undici-types@~7.10.0
+139 http fetch GET 200 https://registry.npmjs.org/undici-types 74ms (cache miss)
+140 timing idealTree:node_modules/engine.io Completed in 256ms
+141 timing idealTree:node_modules/@types/cors Completed in 0ms
+142 silly placeDep ROOT undici-types@7.10.0 OK for: @types/node@24.3.0 want: ~7.10.0
+143 timing idealTree:node_modules/@types/node Completed in 1ms
+144 timing idealTree:node_modules/engine.io-parser Completed in 0ms
+145 silly placeDep node_modules/socket.io-adapter debug@4.3.7 OK for: socket.io-adapter@2.5.5 want: ~4.3.4
+146 silly placeDep node_modules/socket.io-adapter ws@8.17.1 OK for: socket.io-adapter@2.5.5 want: ~8.17.1
+147 timing idealTree:node_modules/socket.io-adapter Completed in 4ms
+148 silly placeDep ROOT @socket.io/component-emitter@3.1.2 OK for: socket.io-parser@4.2.4 want: ~3.1.0
+149 silly placeDep node_modules/socket.io-parser debug@4.3.7 OK for: socket.io-parser@4.2.4 want: ~4.3.1
+150 timing idealTree:node_modules/socket.io-parser Completed in 3ms
+151 timing idealTree:node_modules/@socket.io/component-emitter Completed in 0ms
+152 timing idealTree:node_modules/undici-types Completed in 0ms
+153 timing idealTree:node_modules/compression/node_modules/negotiator Completed in 0ms
+154 timing idealTree:node_modules/compression/node_modules/on-headers Completed in 0ms
+155 timing idealTree:node_modules/compression/node_modules/safe-buffer Completed in 0ms
+156 timing idealTree:node_modules/engine.io/node_modules/cookie Completed in 0ms
+157 silly placeDep node_modules/engine.io ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+158 timing idealTree:node_modules/engine.io/node_modules/debug Completed in 1ms
+159 timing idealTree:node_modules/engine.io/node_modules/ms Completed in 0ms
+160 timing idealTree:node_modules/engine.io/node_modules/ws Completed in 0ms
+161 silly placeDep node_modules/node-red-dashboard encodeurl@2.0.0 OK for: serve-static@1.16.2 want: ~2.0.0
+162 silly placeDep node_modules/node-red-dashboard send@0.19.0 OK for: serve-static@1.16.2 want: 0.19.0
+163 silly fetch manifest ms@2.1.3
+164 silly fetch manifest mime@1.6.0
+165 silly fetch manifest encodeurl@~1.0.2
+166 http fetch GET 200 https://registry.npmjs.org/mime 96ms (cache miss)
+167 timing idealTree:node_modules/node-red-dashboard/node_modules/serve-static Completed in 100ms
+168 timing idealTree:node_modules/node-red-dashboard/node_modules/encodeurl Completed in 0ms
+169 silly placeDep node_modules/node-red-dashboard/node_modules/send encodeurl@1.0.2 OK for: send@0.19.0 want: ~1.0.2
+170 silly placeDep node_modules/node-red-dashboard mime@1.6.0 OK for: send@0.19.0 want: 1.6.0
+171 silly placeDep node_modules/node-red-dashboard ms@2.1.3 OK for: send@0.19.0 want: 2.1.3
+172 timing idealTree:node_modules/node-red-dashboard/node_modules/send Completed in 3ms
+173 timing idealTree:node_modules/node-red-dashboard/node_modules/mime Completed in 0ms
+174 timing idealTree:node_modules/node-red-dashboard/node_modules/ms Completed in 0ms
+175 silly placeDep node_modules/socket.io-adapter ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+176 timing idealTree:node_modules/socket.io-adapter/node_modules/debug Completed in 1ms
+177 timing idealTree:node_modules/socket.io-adapter/node_modules/ms Completed in 0ms
+178 timing idealTree:node_modules/socket.io-adapter/node_modules/ws Completed in 0ms
+179 silly placeDep node_modules/socket.io-parser ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+180 timing idealTree:node_modules/socket.io-parser/node_modules/debug Completed in 3ms
+181 timing idealTree:node_modules/socket.io-parser/node_modules/ms Completed in 0ms
+182 silly placeDep node_modules/socket.io ms@2.1.3 OK for: debug@4.3.7 want: ^2.1.3
+183 timing idealTree:node_modules/socket.io/node_modules/debug Completed in 1ms
+184 timing idealTree:node_modules/socket.io/node_modules/ms Completed in 0ms
+185 timing idealTree:node_modules/node-red-dashboard/node_modules/send/node_modules/encodeurl Completed in 0ms
+186 timing idealTree:buildDeps Completed in 4535ms
+187 timing idealTree:fixDepFlags Completed in 4ms
+188 timing idealTree Completed in 4828ms
+189 timing command:install Completed in 4848ms
+190 notice
+190 notice New [31mmajor[39m version of npm available! [31m8.19.4[39m -> [32m11.6.0[39m
+190 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v11.6.0[39m
+190 notice Run [32mnpm install -g npm@11.6.0[39m to update!
+190 notice
+191 verbose stack HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/node-red-contrib-qr-code - Not found
+191 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/lib/check-response.js:95:15
+191 verbose stack     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+191 verbose stack     at async RegistryFetcher.packument (/usr/local/lib/node_modules/npm/node_modules/pacote/lib/registry.js:92:19)
+191 verbose stack     at async RegistryFetcher.manifest (/usr/local/lib/node_modules/npm/node_modules/pacote/lib/registry.js:124:23)
+191 verbose stack     at async Arborist.[nodeFromEdge] (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1061:19)
+191 verbose stack     at async Arborist.[buildDepStep] (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:930:11)
+191 verbose stack     at async Arborist.buildIdealTree (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:211:7)
+191 verbose stack     at async Promise.all (index 1)
+191 verbose stack     at async Arborist.reify (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:154:5)
+191 verbose stack     at async Install.exec (/usr/local/lib/node_modules/npm/lib/commands/install.js:145:5)
+192 verbose statusCode 404
+193 verbose pkgid node-red-contrib-qr-code@*
+194 verbose cwd /usr/src/node-red
+195 verbose Linux 6.10.14-linuxkit
+196 verbose node v16.20.2
+197 verbose npm  v8.19.4
+198 error code E404
+199 error 404 Not Found - GET https://registry.npmjs.org/node-red-contrib-qr-code - Not found
+200 error 404
+201 error 404  'node-red-contrib-qr-code@*' is not in this registry.
+202 error 404
+202 error 404 Note that you can also install from a
+203 error 404 tarball, folder, http url, or git url.
+204 verbose exit 1
+205 timing npm Completed in 4945ms
+206 verbose unfinished npm timer reify 1756949805228
+207 verbose unfinished npm timer reify:loadTrees 1756949805247
+208 verbose code 1
+209 error A complete log of this run can be found in:
+209 error     /data/.npm/_logs/2025-09-04T01_36_45_137Z-debug-0.log
